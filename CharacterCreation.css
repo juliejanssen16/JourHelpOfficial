@@ -1,105 +1,117 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffe6f0;
-    color: #660033;
-    margin: 0;
-    padding: 20px;
-}
-
-.container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
     background-color: #fff0f6;
-    border: 2px solid #ff69b4;
-    border-radius: 10px;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-}
-
-h2, h3 {
-    color: #d61a7f;
-}
-
-input[type="text"], textarea, select {
-    width: 100%;
-    padding: 8px;
-    margin: 6px 0 12px 0;
-    border: 1px solid #ffb6c1;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Comfortaa', cursive;
-}
-
-button {
-    background-color: #ff69b4;
-    border: none;
-    color: white;
-    padding: 10px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-    font-family: 'Comfortaa', cursive;
-}
-
-button:hover {
-    background-color: #d61a7f;
-}
-
-.trait-group {
-    margin-bottom: 15px;
-}
-
-.trait-btn {
-    margin-right: 10px;
-    margin-bottom: 8px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 2px solid #ff69b4;
-    background-color: #fff0f6;
-    cursor: pointer;
-    font-weight: bold;
-    color: #660033;
-    font-family: 'Comfortaa', cursive;
-    transition: background-color 0.2s ease;
-}
-
-.trait-btn.active {
-    background-color: #ff69b4;
-    color: white;
-}
-
-.entry {
-    border: 1px solid #ffb6c1;
-    background-color: #fff0f6;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-}
-
-.entry p {
-    margin: 4px 0;
+    color: #333;
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
-#charDisplayList li {
+.trait-group {
+    margin-bottom: 10px;
+}
+
+.trait-btn {
+    margin: 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ff69b4;
+    background-color: white;
+    color: #ff69b4;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.trait-btn:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.selected-trait-btn {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff3d9b;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 7px;
+    margin: 5px 0 15px;
+    box-sizing: border-box;
+    border: 2px solid #ff69b4;
+    border-radius: 4px;
+}
+
+#charList li {
     margin-bottom: 8px;
-    padding: 8px;
-    background-color: #ffd6e8;
+    list-style-type: none;
+}
+
+#charList li button {
+    background-color: #ff4d4d;
+    padding: 4px 7px;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+#charList li button:hover {
+    background-color: #cc0000;
+}
+
+#entriesList li {
+    margin-bottom: 15px;
+    list-style-type: none;
+}
+
+#entriesList li div {
+    background-color: #ffe6f0;
+    padding: 10px;
     border-radius: 6px;
 }
 
-#charDisplayList button {
-    margin-left: 5px;
+.delete-entry-btn {
+    background-color: #ff4d4d;
+    padding: 4px 7px;
+    font-size: 0.8em;
+    margin-top: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: white;
 }
 
-#entriesList .entry {
-    border-left: 8px solid;
-    transition: border-color 0.3s ease;
+.delete-entry-btn:hover {
+    background-color: #cc0000;
 }
 
-#moodGraphContainer {
-    margin-top: 30px;
+#allEntriesOverviewList div {
+    background-color: #ffe6f0;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
 }
 
+canvas {
+    margin-top: 20px;
+    border: 1px solid #ff69b4;
+    border-radius: 6px;
+    background-color: #fff0f6;
+}

@@ -1,5 +1,3 @@
-// CharacterCreation.js
-
 // Elements
 const charNameInput = document.getElementById('charNameInput');
 const charColorPicker = document.getElementById('charColorPicker');
@@ -8,6 +6,7 @@ const charListSection = document.getElementById('characterListSection');
 const charCreationSection = document.getElementById('characterCreationSection');
 const appSection = document.getElementById('appSection');
 const saveCharBtn = document.getElementById('saveCharBtn');
+const createNewCharBtn = document.getElementById('createNewCharBtn');
 const selectCharacterEntry = document.getElementById('selectCharacterEntry');
 const characterNameHeader = document.getElementById('characterNameHeader');
 
@@ -76,249 +75,244 @@ saveCharBtn.addEventListener('click', () => {
         alert('Please enter a character name.');
         return;
     }
-
-    // Validate traits selected
-    for (const group of traitGroups) {
-        if (!traitSelections[group]) {
-            alert(`Please select a ${group}.`);
+    // Check all traits selected
+    for (let g of traitGroups) {
+        if (!traitSelections[g]) {
+            alert(`Please select a ${g}.`);
             return;
         }
     }
 
+    // Check if name unique
+    if (characters.some(c => c.name.toLowerCase() === name.toLowerCase())) {
+        alert('Character name must be unique.');
+        return;
+    }
+
+    const color = charColorPicker.value;
+
     const newChar = {
-        id: crypto.randomUUID(),
+        id: Date.now(),
         name,
         species: traitSelections.species,
         hair: traitSelections.hair,
         eyeColor: traitSelections.eyeColor,
-        color: charColorPicker.value,
-        createdAt: Date.now(),
-        entriesCount: 0,
+        color,
+        created: new Date().toISOString(),
     };
 
     characters.push(newChar);
-    saveAll();
-    updateCharList();
+    saveData();
+    updateCharacterList();
+    resetCharacterCreation();
 
-    // Clear form
+    // Hide creation section, show character list & app section
+    charCreationSection.classList.add('hidden');
+    charListSection.classList.remove('hidden');
+    appSection.classList.remove('hidden');
+
+    // Populate character select for diary
+    populateCharacterSelect();
+
+    // Select new character in diary
+    selectCharacterEntry.value = newChar.id;
+    onCharacterChange();
+});
+
+// Reset character creation inputs
+function resetCharacterCreation() {
     charNameInput.value = '';
     charColorPicker.value = '#ff69b4';
     traitGroups.forEach(g => {
         traitSelections[g] = null;
         resetTraitGroup(g);
     });
+}
 
-    // Show character list & diary app if this is first character
-    charCreationSection.classList.add('hidden');
-    charListSection.classList.remove('hidden');
-    appSection.classList.remove('hidden');
-
-    // Update selects for entries
-    updateCharacterSelect();
-});
-
-// Update character list UI
-function updateCharList() {
-    // Clear
+// Update character list in UI
+function updateCharacterList() {
     charList.innerHTML = '';
-
-    // Sorting characters
-    const sortValue = sortCharactersSelect.value || 'name-asc';
     let sortedChars = [...characters];
 
-    if (sortValue === 'name-asc') {
-        sortedChars.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortValue === 'name-desc') {
-        sortedChars.sort((a, b) => b.name.localeCompare(a.name));
-    } else if (sortValue === 'date-asc') {
-        sortedChars.sort((a, b) => a.createdAt - b.createdAt);
-    } else if (sortValue === 'date-desc') {
-        sortedChars.sort((a, b) => b.createdAt - a.createdAt);
-    } else if (sortValue === 'entries-desc') {
-        sortedChars.sort((a, b) => b.entriesCount - a.entriesCount);
+    // Sort characters
+    const sortVal = sortCharactersSelect.value;
+    if (sortVal === 'name-asc') {
+        sortedChars.sort((a,b) => a.name.localeCompare(b.name));
+    } else if (sortVal === 'name-desc') {
+        sortedChars.sort((a,b) => b.name.localeCompare(a.name));
+    } else if (sortVal === 'date-asc') {
+        sortedChars.sort((a,b) => new Date(a.created) - new Date(b.created));
+    } else if (sortVal === 'date-desc') {
+        sortedChars.sort((a,b) => new Date(b.created) - new Date(a.created));
+    } else if (sortVal === 'entries-desc') {
+        sortedChars.sort((a,b) => {
+            let countA = entries.filter(e => e.characterId === a.id).length;
+            let countB = entries.filter(e => e.characterId === b.id).length;
+            return countB - countA;
+        });
     }
 
-    for (const char of sortedChars) {
+    sortedChars.forEach(c => {
         const li = document.createElement('li');
-        li.textContent = `${char.name} (${char.species}, Hair: ${char.hair}, Eyes: ${char.eyeColor}) - Entries: ${char.entriesCount}`;
-        li.style.color = char.color;
+        li.textContent = `${c.name} (${c.species}, Hair: ${c.hair}, Eyes: ${c.eyeColor})`;
 
-        // Add Delete button
+        // Color circle
+        const colorSpan = document.createElement('span');
+        colorSpan.style.backgroundColor = c.color;
+        colorSpan.style.display = 'inline-block';
+        colorSpan.style.width = '12px';
+        colorSpan.style.height = '12px';
+        colorSpan.style.borderRadius = '50%';
+        colorSpan.style.marginLeft = '6px';
+        li.appendChild(colorSpan);
+
+        // Delete button
         const delBtn = document.createElement('button');
         delBtn.textContent = 'Delete';
-        delBtn.style.marginLeft = '10px';
+        delBtn.title = 'Delete character and all their entries';
         delBtn.addEventListener('click', () => {
-            if (confirm(`Delete character "${char.name}"? This will also delete their diary entries.`)) {
-                deleteCharacter(char.id);
+            if (confirm(`Delete character "${c.name}" and all their diary entries?`)) {
+                deleteCharacter(c.id);
             }
         });
-
         li.appendChild(delBtn);
+
         charList.appendChild(li);
-    }
+    });
 }
 
 // Delete character and their entries
 function deleteCharacter(charId) {
     characters = characters.filter(c => c.id !== charId);
     entries = entries.filter(e => e.characterId !== charId);
-    saveAll();
+    saveData();
+    updateCharacterList();
+    populateCharacterSelect();
+    renderEntries();
+}
 
-    updateCharList();
-    updateCharacterSelect();
-    updateEntriesList();
+// Populate character select dropdown for diary entry
+function populateCharacterSelect() {
+    selectCharacterEntry.innerHTML = '';
+    characters.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.id;
+        opt.textContent = c.name;
+        selectCharacterEntry.appendChild(opt);
+    });
 
-    // If no characters left, show creation form again
     if (characters.length === 0) {
+        // If no characters, go back to creation
         charCreationSection.classList.remove('hidden');
         charListSection.classList.add('hidden');
         appSection.classList.add('hidden');
     }
 }
 
-// Save all to localStorage
-function saveAll() {
-    localStorage.setItem('characters', JSON.stringify(characters));
-    localStorage.setItem('entries', JSON.stringify(entries));
+// On character change (in diary)
+selectCharacterEntry.addEventListener('change', onCharacterChange);
+
+function onCharacterChange() {
+    const charId = Number(selectCharacterEntry.value);
+    const char = characters.find(c => c.id === charId);
+    if (!char) return;
+    characterNameHeader.textContent = `Diary for: ${char.name}`;
+    renderEntries();
+    drawMoodGraph(charId);
 }
 
-// Load all from localStorage
-function loadAll() {
-    const storedChars = localStorage.getItem('characters');
-    if (storedChars) {
-        characters = JSON.parse(storedChars);
-    }
-
-    const storedEntries = localStorage.getItem('entries');
-    if (storedEntries) {
-        entries = JSON.parse(storedEntries);
-    }
-}
-
-// Update the character select dropdown for entries
-function updateCharacterSelect() {
-    selectCharacterEntry.innerHTML = '';
-    for (const char of characters) {
-        const option = document.createElement('option');
-        option.value = char.id;
-        option.textContent = char.name;
-        selectCharacterEntry.appendChild(option);
-    }
-
-    // Update header with selected character
-    if (selectCharacterEntry.value) {
-        const selectedChar = characters.find(c => c.id === selectCharacterEntry.value);
-        if (selectedChar) {
-            characterNameHeader.textContent = `Diary for: ${selectedChar.name}`;
-        }
-    }
-}
-
-// When user selects a different character for diary entries
-selectCharacterEntry.addEventListener('change', () => {
-    const selectedChar = characters.find(c => c.id === selectCharacterEntry.value);
-    if (selectedChar) {
-        characterNameHeader.textContent = `Diary for: ${selectedChar.name}`;
-    }
-    updateEntriesList();
-});
-
-// Save diary entry button
+// Save diary entry
 document.getElementById('saveEntryBtn').addEventListener('click', () => {
-    const selectedCharId = selectCharacterEntry.value;
-    if (!selectedCharId || !characters.find(c => c.id === selectedCharId)) {
-        alert('Please select a valid character for the entry.');
+    const charId = Number(selectCharacterEntry.value);
+    if (!charId) {
+        alert('Please select a character.');
         return;
     }
-    if (!entryText.value.trim()) {
+    const text = entryText.value.trim();
+    if (!text) {
         alert('Please write some text for the diary entry.');
         return;
     }
+    const mood = moodSelect.value;
+    const tagsRaw = entryTagsInput.value.trim();
+    const tags = tagsRaw ? tagsRaw.split(',').map(t => t.trim().toLowerCase()).filter(Boolean) : [];
 
     const newEntry = {
-        id: crypto.randomUUID(),
-        characterId: selectedCharId,
-        text: entryText.value.trim(),
-        tags: entryTagsInput.value
-            .split(',')
-            .map(t => t.trim())
-            .filter(t => t !== ''),
-        mood: moodSelect.value,
-        createdAt: Date.now(),
+        id: Date.now(),
+        characterId: charId,
+        text,
+        mood,
+        tags,
+        created: new Date().toISOString(),
     };
 
     entries.push(newEntry);
-
-    // Increase entriesCount for character
-    const char = characters.find(c => c.id === selectedCharId);
-    if (char) {
-        char.entriesCount++;
-    }
-
-    saveAll();
+    saveData();
 
     entryText.value = '';
     entryTagsInput.value = '';
-    moodSelect.value = 'neutral';  // lowercase!
+    moodSelect.value = 'neutral';
 
-    updateEntriesList();
-    updateCharList();
-    updateMoodGraph();
+    renderEntries();
+    drawMoodGraph(charId);
 });
 
-// Update diary entries list with filters and sorting
-function updateEntriesList() {
-    entriesList.innerHTML = '';
+// Render diary entries filtered and sorted
+function renderEntries() {
+    const charId = Number(selectCharacterEntry.value);
+    if (!charId) {
+        entriesList.innerHTML = '<li>No character selected.</li>';
+        return;
+    }
 
-    const selectedCharId = selectCharacterEntry.value;
-    if (!selectedCharId) return;
-
-    // Filter entries for selected character
-    let filteredEntries = entries.filter(e => e.characterId === selectedCharId);
+    let filtered = entries.filter(e => e.characterId === charId);
 
     // Filter by mood
     const moodFilter = filterMood.value;
-    if (moodFilter && moodFilter !== 'all') {
-        filteredEntries = filteredEntries.filter(e => e.mood === moodFilter);
+    if (moodFilter !== 'all') {
+        filtered = filtered.filter(e => e.mood === moodFilter);
     }
 
     // Filter by tag
     const tagFilter = filterTag.value.trim().toLowerCase();
     if (tagFilter) {
-        filteredEntries = filteredEntries.filter(e =>
-            e.tags.some(tag => tag.toLowerCase().includes(tagFilter))
-        );
+        filtered = filtered.filter(e => e.tags.includes(tagFilter));
     }
 
-    // Filter by search input
-    const searchText = searchInput.value.trim().toLowerCase();
-    if (searchText) {
-        filteredEntries = filteredEntries.filter(e =>
-            e.text.toLowerCase().includes(searchText)
-        );
+    // Search text
+    const searchVal = searchInput.value.trim().toLowerCase();
+    if (searchVal) {
+        filtered = filtered.filter(e => e.text.toLowerCase().includes(searchVal));
     }
 
     // Sort entries
-    const sortVal = sortEntriesSelect.value;
-    if (sortVal === 'date-asc') {
-        filteredEntries.sort((a, b) => a.createdAt - b.createdAt);
+    if (sortEntriesSelect.value === 'date-asc') {
+        filtered.sort((a, b) => new Date(a.created) - new Date(b.created));
     } else {
-        filteredEntries.sort((a, b) => b.createdAt - a.createdAt);
+        filtered.sort((a, b) => new Date(b.created) - new Date(a.created));
     }
 
-    for (const entry of filteredEntries) {
+    entriesList.innerHTML = '';
+
+    if (filtered.length === 0) {
+        entriesList.innerHTML = '<li>No diary entries found.</li>';
+        return;
+    }
+
+    filtered.forEach(entry => {
         const li = document.createElement('li');
-        const dateStr = new Date(entry.createdAt).toLocaleString();
+
+        const dateStr = new Date(entry.created).toLocaleString();
+        const tagsStr = entry.tags.length ? `Tags: ${entry.tags.join(', ')}` : '';
         li.innerHTML = `
-            <div style="border-left: 5px solid ${getMoodColor(entry.mood)}; padding-left: 8px;">
-                <strong>${dateStr}</strong> - Mood: ${entry.mood.charAt(0).toUpperCase() + entry.mood.slice(1)}<br/>
-                <em>Tags: ${entry.tags.join(', ')}</em><br/>
-                <p>${entry.text}</p>
-                <button class="delete-entry-btn">Delete Entry</button>
-            </div>
+          <div>
+            <strong>${dateStr}</strong> - Mood: <em>${entry.mood}</em><br />
+            ${tagsStr ? `<small>${tagsStr}</small><br />` : ''}
+            <p>${entry.text.replace(/\n/g, '<br />')}</p>
+            <button class="delete-entry-btn">Delete Entry</button>
+          </div>
         `;
 
-        // Delete entry button
         li.querySelector('.delete-entry-btn').addEventListener('click', () => {
             if (confirm('Delete this diary entry?')) {
                 deleteEntry(entry.id);
@@ -326,161 +320,194 @@ function updateEntriesList() {
         });
 
         entriesList.appendChild(li);
-    }
+    });
 }
 
-// Delete diary entry
+// Delete diary entry by id
 function deleteEntry(entryId) {
-    const entryIndex = entries.findIndex(e => e.id === entryId);
-    if (entryIndex === -1) return;
-
-    // Reduce entriesCount for character
-    const entry = entries[entryIndex];
-    const char = characters.find(c => c.id === entry.characterId);
-    if (char && char.entriesCount > 0) {
-        char.entriesCount--;
-    }
-
-    entries.splice(entryIndex, 1);
-    saveAll();
-
-    updateEntriesList();
-    updateCharList();
-    updateMoodGraph();
+    entries = entries.filter(e => e.id !== entryId);
+    saveData();
+    renderEntries();
+    drawMoodGraph(Number(selectCharacterEntry.value));
 }
 
-// Get color for mood graph and borders
-function getMoodColor(mood) {
-    switch (mood) {
-        case 'happy':
-            return '#FFD700'; // gold
-        case 'sad':
-            return '#1E90FF'; // dodgerblue
-        case 'neutral':
-            return '#808080'; // gray
-        case 'anxious':
-            return '#FF4500'; // orangered
-        default:
-            return '#000000';
+// Save all data to localStorage
+function saveData() {
+    localStorage.setItem('characters', JSON.stringify(characters));
+    localStorage.setItem('entries', JSON.stringify(entries));
+}
+
+// Load all data from localStorage
+function loadData() {
+    const charsRaw = localStorage.getItem('characters');
+    if (charsRaw) {
+        characters = JSON.parse(charsRaw);
+    }
+    const entriesRaw = localStorage.getItem('entries');
+    if (entriesRaw) {
+        entries = JSON.parse(entriesRaw);
     }
 }
 
-// Mood graph data and drawing
-function updateMoodGraph() {
-    // Clear
-    moodGraphCtx.clearRect(0, 0, moodGraphCanvas.width, moodGraphCanvas.height);
+// Show all entries overview
+showAllEntriesBtn.addEventListener('click', () => {
+    allEntriesOverviewSection.classList.remove('hidden');
+    appSection.classList.add('hidden');
+    charListSection.classList.add('hidden');
+    charCreationSection.classList.add('hidden');
+    renderAllEntriesOverview();
+});
 
-    // Get entries for selected character, sorted by date ascending
-    const selectedCharId = selectCharacterEntry.value;
-    if (!selectedCharId) return;
+// Close overview
+closeOverviewBtn.addEventListener('click', () => {
+    allEntriesOverviewSection.classList.add('hidden');
+    appSection.classList.remove('hidden');
+    charListSection.classList.remove('hidden');
+});
 
-    let moodEntries = entries
-        .filter(e => e.characterId === selectedCharId)
-        .sort((a, b) => a.createdAt - b.createdAt);
+// Render all entries overview (grouped by character)
+function renderAllEntriesOverview() {
+    allEntriesOverviewList.innerHTML = '';
+    if (entries.length === 0) {
+        allEntriesOverviewList.textContent = 'No diary entries available.';
+        return;
+    }
 
-    if (moodEntries.length === 0) return;
+    const grouped = {};
 
-    // Map moods to numeric values
-    const moodMap = { happy: 3, neutral: 2, sad: 1, anxious: 0 };
-    const maxMoodValue = 3;
-    const minMoodValue = 0;
+    entries.forEach(e => {
+        if (!grouped[e.characterId]) grouped[e.characterId] = [];
+        grouped[e.characterId].push(e);
+    });
+
+    for (const charId in grouped) {
+        const char = characters.find(c => c.id === Number(charId));
+        if (!char) continue;
+
+        const div = document.createElement('div');
+        div.innerHTML = `<h3>${char.name} (${grouped[charId].length} entries)</h3>`;
+
+        grouped[charId].forEach(entry => {
+            const dateStr = new Date(entry.created).toLocaleString();
+            const tagsStr = entry.tags.length ? `Tags: ${entry.tags.join(', ')}` : '';
+            const p = document.createElement('p');
+            p.innerHTML = `<strong>${dateStr}</strong> - Mood: <em>${entry.mood}</em><br />
+                ${tagsStr ? `<small>${tagsStr}</small><br />` : ''}
+                ${entry.text.replace(/\n/g, '<br />')}`;
+            div.appendChild(p);
+        });
+
+        allEntriesOverviewList.appendChild(div);
+    }
+}
+
+// Draw simple mood graph for selected character
+function drawMoodGraph(charId) {
+    const width = moodGraphCanvas.width;
+    const height = moodGraphCanvas.height;
+
+    moodGraphCtx.clearRect(0, 0, width, height);
+
+    const charEntries = entries
+        .filter(e => e.characterId === charId)
+        .sort((a, b) => new Date(a.created) - new Date(b.created));
+
+    if (charEntries.length < 2) {
+        moodGraphCtx.fillStyle = '#888';
+        moodGraphCtx.font = '16px Arial';
+        moodGraphCtx.fillText('Not enough entries to draw mood graph.', 20, height / 2);
+        return;
+    }
+
+    // Map moods to numeric values for plotting
+    const moodMap = {
+        'happy': 3,
+        'neutral': 2,
+        'anxious': 1,
+        'sad': 0,
+    };
 
     const padding = 40;
-    const width = moodGraphCanvas.width - padding * 2;
-    const height = moodGraphCanvas.height - padding * 2;
-
-    // X step per entry
-    const stepX = width / (moodEntries.length - 1 || 1);
+    const graphWidth = width - 2 * padding;
+    const graphHeight = height - 2 * padding;
 
     // Draw axis lines
-    moodGraphCtx.strokeStyle = '#ccc';
-    moodGraphCtx.beginPath();
-    moodGraphCtx.moveTo(padding, padding);
-    moodGraphCtx.lineTo(padding, padding + height);
-    moodGraphCtx.lineTo(padding + width, padding + height);
-    moodGraphCtx.stroke();
+    moodGraphCtx.strokeStyle = '#ff69b4';
+    moodGraphCtx.lineWidth = 2;
 
-    // Draw mood line
+    // Y axis labels
+    const moodsSorted = ['sad', 'anxious', 'neutral', 'happy'];
+    moodGraphCtx.fillStyle = '#ff69b4';
+    moodGraphCtx.font = '12px Arial';
+
+    for (let i = 0; i < moodsSorted.length; i++) {
+        const y = padding + (graphHeight / (moodsSorted.length - 1)) * i;
+        moodGraphCtx.fillText(moodsSorted[moodsSorted.length - 1 - i], 5, y + 4);
+        moodGraphCtx.beginPath();
+        moodGraphCtx.moveTo(padding, y);
+        moodGraphCtx.lineTo(width - padding, y);
+        moodGraphCtx.strokeStyle = '#ffd6e8';
+        moodGraphCtx.stroke();
+    }
+
+    // X axis labels: Dates evenly spaced
+    const n = charEntries.length;
+    for (let i = 0; i < n; i++) {
+        const x = padding + (graphWidth / (n - 1)) * i;
+        if (i % Math.ceil(n/10) === 0 || i === n - 1) {
+            const dateStr = new Date(charEntries[i].created).toLocaleDateString();
+            moodGraphCtx.fillStyle = '#ff69b4';
+            moodGraphCtx.fillText(dateStr, x - 20, height - 10);
+        }
+    }
+
+    // Plot line
+    moodGraphCtx.strokeStyle = '#ff1493';
     moodGraphCtx.lineWidth = 3;
-    moodGraphCtx.strokeStyle = '#ff69b4'; // pink mood line
     moodGraphCtx.beginPath();
 
-    moodEntries.forEach((entry, i) => {
-        const x = padding + i * stepX;
-        // Normalize mood numeric value to y coordinate
-        const moodVal = moodMap[entry.mood] ?? 2;
-        const y = padding + height - ((moodVal - minMoodValue) / (maxMoodValue - minMoodValue)) * height;
-
+    charEntries.forEach((e, i) => {
+        const x = padding + (graphWidth / (n - 1)) * i;
+        const moodValue = moodMap[e.mood] !== undefined ? moodMap[e.mood] : 2;
+        const y = padding + graphHeight - (moodValue / 3) * graphHeight;
         if (i === 0) {
             moodGraphCtx.moveTo(x, y);
         } else {
             moodGraphCtx.lineTo(x, y);
         }
-
-        // Draw point circle
-        moodGraphCtx.fillStyle = getMoodColor(entry.mood);
+        // Draw points
+        moodGraphCtx.fillStyle = '#ff69b4';
         moodGraphCtx.beginPath();
-        moodGraphCtx.arc(x, y, 6, 0, Math.PI * 2);
+        moodGraphCtx.arc(x, y, 5, 0, 2 * Math.PI);
         moodGraphCtx.fill();
     });
 
     moodGraphCtx.stroke();
 }
 
-// Update overview section with all entries across characters
-function updateAllEntriesOverview() {
-    allEntriesOverviewList.innerHTML = '';
-
-    if (entries.length === 0) {
-        allEntriesOverviewList.textContent = 'No diary entries yet.';
-        return;
-    }
-
-    // Sort all entries by date descending
-    const sortedEntries = [...entries].sort((a, b) => b.createdAt - a.createdAt);
-
-    for (const entry of sortedEntries) {
-        const char = characters.find(c => c.id === entry.characterId);
-        const div = document.createElement('div');
-        div.style.borderLeft = `5px solid ${char ? char.color : '#000'}`;
-        div.style.paddingLeft = '8px';
-        div.style.marginBottom = '8px';
-
-        div.innerHTML = `
-            <strong>${char ? char.name : 'Unknown Character'}</strong> - ${new Date(entry.createdAt).toLocaleString()}<br/>
-            Mood: ${entry.mood.charAt(0).toUpperCase() + entry.mood.slice(1)}<br/>
-            Tags: ${entry.tags.join(', ')}<br/>
-            <p>${entry.text}</p>
-        `;
-
-        allEntriesOverviewList.appendChild(div);
-    }
-}
-
-// Show overview button
-showAllEntriesBtn.addEventListener('click', () => {
-    allEntriesOverviewSection.classList.remove('hidden');
-    updateAllEntriesOverview();
+// Sort characters event
+sortCharactersSelect.addEventListener('change', () => {
+    updateCharacterList();
 });
 
-// Close overview button
-closeOverviewBtn.addEventListener('click', () => {
-    allEntriesOverviewSection.classList.add('hidden');
+// Filters events for entries
+filterMood.addEventListener('change', renderEntries);
+filterTag.addEventListener('input', renderEntries);
+searchInput.addEventListener('input', renderEntries);
+sortEntriesSelect.addEventListener('change', renderEntries);
+
+// Create new character button in character list section
+createNewCharBtn.addEventListener('click', () => {
+    charCreationSection.classList.remove('hidden');
+    charListSection.classList.add('hidden');
+    appSection.classList.add('hidden');
 });
 
-// Filters and search inputs event listeners to update entries list
-filterMood.addEventListener('change', updateEntriesList);
-filterTag.addEventListener('input', updateEntriesList);
-searchInput.addEventListener('input', updateEntriesList);
-sortEntriesSelect.addEventListener('change', updateEntriesList);
-sortCharactersSelect.addEventListener('change', updateCharList);
-
-// Initialization
+// Initialize app
 function init() {
-    loadAll();
+    loadData();
 
     if (characters.length === 0) {
-        // Show character creation form
         charCreationSection.classList.remove('hidden');
         charListSection.classList.add('hidden');
         appSection.classList.add('hidden');
@@ -488,11 +515,10 @@ function init() {
         charCreationSection.classList.add('hidden');
         charListSection.classList.remove('hidden');
         appSection.classList.remove('hidden');
-
-        updateCharList();
-        updateCharacterSelect();
-        updateEntriesList();
-        updateMoodGraph();
+        updateCharacterList();
+        populateCharacterSelect();
+        selectCharacterEntry.value = characters[0].id;
+        onCharacterChange();
     }
 }
 
