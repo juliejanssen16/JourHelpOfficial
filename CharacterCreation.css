@@ -177,4 +177,48 @@ canvas {
     }
 }
 
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: #ff69b4cc; /* pink with some transparency */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,105,180,0.6);
+    font-family: 'Baloo 2', cursive, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+}
+
+.cookie-consent-banner p {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.cookie-consent-banner a {
+    color: white;
+    text-decoration: underline;
+}
+
+.cookie-consent-banner button {
+    background-color: white;
+    color: #ff69b4;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-consent-banner button:hover {
+    background-color: #ff3d9b;
+    color: white;
+}
 

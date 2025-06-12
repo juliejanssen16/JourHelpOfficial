@@ -115,6 +115,45 @@
 
 <audio id="backgroundMusic" src="cute-music.mp3" loop muted></audio>
 
+<div id="cookie-banner" style="display:none;">
+    <div>
+        We use cookies to improve your experience. Do you accept cookies?
+    </div>
+    <div>
+        <button id="accept-btn">Accept</button>
+        <button id="decline-btn" class="decline">Decline</button>
+    </div>
+</div>
+
+<script>
+    // Check stored consent
+    const consent = localStorage.getItem('cookie-consent');
+
+    function showBanner() {
+        document.getElementById('cookie-banner').style.display = 'flex';
+    }
+    function hideBanner() {
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    // Show banner only if consent NOT accepted
+    if (consent !== 'accepted') {
+        showBanner();
+    }
+
+    document.getElementById('accept-btn').addEventListener('click', () => {
+        localStorage.setItem('cookie-consent', 'accepted');
+        hideBanner();
+    });
+
+    document.getElementById('decline-btn').addEventListener('click', () => {
+        // Do NOT store decline - so banner will appear again next reload
+        hideBanner();
+    });
+</script>
+
+
+
 <script src="CharacterCreation.js"></script>
 <script src="sparkles.js"></script> <!-- added script for sparkles -->
 </body>
