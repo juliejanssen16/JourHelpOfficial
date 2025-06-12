@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const charNameInput = document.getElementById('charName');
+    const charTraitsInput = document.getElementById('charTraits');
     const saveCharBtn = document.getElementById('saveCharBtn');
     const charDisplayList = document.getElementById('charDisplayList');
     const charSelect = document.getElementById('charSelect');
@@ -10,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const entriesList = document.getElementById('entriesList');
     const searchInput = document.getElementById('searchInput');
 
-    let characters = JSON.parse(localStorage.getItem('characters')) || [];
+    let characters = (JSON.parse(localStorage.getItem('characters')) || []).map(c => ({
+        ...c,
+        traits: Array.isArray(c.traits) ? c.traits : []
+    }));
     let entries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
     let editingCharId = null;
 
@@ -27,13 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
         charSelect.innerHTML = '<option value="">Select Character</option>';
         characters.forEach(char => {
             const li = document.createElement('li');
-            li.textContent = char.name;
+            li.innerHTML = `
+                <strong>${char.name}</strong>
+                ${(char.traits && char.traits.length) ? `<p>Traits: ${char.traits.join(', ')}</p>` : ''}
+            `;
 
             const editBtn = document.createElement('button');
             editBtn.textContent = 'Edit';
             editBtn.onclick = () => {
                 editingCharId = char.id;
                 charNameInput.value = char.name;
+                charTraitsInput.value = char.traits.join(', ');
             };
 
             const deleteBtn = document.createElement('button');
@@ -55,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const opt = document.createElement('option');
             opt.value = char.id;
-            opt.textContent = char.name;
+            opt.textContent = `${char.name} (${char.traits.join(', ')})`;
             charSelect.appendChild(opt);
         });
     }
@@ -92,17 +100,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     saveCharBtn.addEventListener('click', () => {
         const name = charNameInput.value.trim();
+        const traits = charTraitsInput.value
+            .split(',')
+            .map(t => t.trim())
+            .filter(t => t);
+
         if (!name) return alert('Please enter a name');
 
         if (editingCharId) {
             const idx = characters.findIndex(c => c.id === editingCharId);
-            if (idx !== -1) characters[idx].name = name;
+            if (idx !== -1) {
+                characters[idx].name = name;
+                characters[idx].traits = traits;
+            }
             editingCharId = null;
         } else {
-            characters.push({ id: Date.now().toString(), name });
+            characters.push({
+                id: Date.now().toString(),
+                name,
+                traits
+            });
         }
 
         charNameInput.value = '';
+        charTraitsInput.value = '';
         saveCharacters();
         updateCharList();
     });
