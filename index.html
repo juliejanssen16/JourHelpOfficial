@@ -1,59 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Character Creation</title>
-    <link rel="stylesheet" href="CharacterCreation.css">
+    <link rel="stylesheet" href="CharacterCreation.css" />
 </head>
 <body>
 
-<div id="controls">
-    <button class="button" id="Head">Head</button>
-    <button class="button" id="Face">Face</button>
-    <button class="button" id="Chest">Chest</button>
-    <button class="button" id="Legs">Legs</button>
-    <button class="button" id="Shoes">Shoes</button>
+<div id="introContainer">
+    <p>Your character's name:</p>
+    <input type="text" id="nameUserInput" placeholder="Enter character name" />
+    <button id="userNameSubmit">Submit</button>
+
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
 </div>
 
-<div id="categoryContainer">
-    <div id="headDiv" class="category">
-        <img class="Hair" id="HairOne" src="Assets/HairOne.gif">
-        <img class="Hair" id="HairTwo" src="Assets/HairTwo.gif">
-        <img class="Hair" id="HairThree" src="Assets/HairThree.gif">
-    </div>
+<div id="app" style="display:none;">
+    <h2 id="characterNameHeader"></h2>
 
-    <div id="faceDiv" class="category">
-        <img class="Face" id="FaceOne" src="Assets/FaceOne.png">
-        <img class="Face" id="FaceTwo" src="Assets/FaceTwo.png">
-        <img class="Face" id="FaceThree" src="Assets/FaceThree.png">
-    </div>
+    <section id="entryFormSection">
+        <h3>New Diary Entry</h3>
+        <textarea id="entryText" placeholder="Write your diary entry..."></textarea><br />
 
-    <div id="chestDiv" class="category">
-        <img class="Shirt" id="ShirtOne" src="Assets/ShirtOne.gif">
-        <img class="Shirt" id="ShirtTwo" src="Assets/ShirtTwo.gif">
-        <img class="Shirt" id="ShirtThree" src="Assets/ShirtThree.gif">
-    </div>
+        <label for="entryTags">Tags (comma separated): </label>
+        <input type="text" id="entryTags" placeholder="backstory, love interest, friends" /><br />
 
-    <div id="legsDiv" class="category">
-        <img class="Pants" id="PantsOne" src="Assets/PantsOne.gif">
-        <img class="Pants" id="PantsTwo" src="Assets/PantsTwo.gif">
-        <img class="Pants" id="PantsThree" src="Assets/PantsThree.gif">
-    </div>
+        <label for="moodSelect">Mood: </label>
+        <select id="moodSelect">
+            <option value="happy">😊 Happy</option>
+            <option value="sad">😢 Sad</option>
+            <option value="anxious">😰 Anxious</option>
+            <option value="angry">😡 Angry</option>
+            <option value="neutral" selected>😐 Neutral</option>
+        </select><br />
 
-    <div id="shoesDiv" class="category">
-        <img class="Shoes" id="ShoesOne" src="Assets/ShoesOne.gif">
-        <img class="Shoes" id="ShoesTwo" src="Assets/ShoesTwo.gif">
-        <img class="Shoes" id="ShoesThree" src="Assets/ShoesThree.gif">
+        <button id="saveEntryBtn">Save Entry</button>
+    </section>
+
+    <section id="searchSection">
+        <h3>Search Entries</h3>
+        <input type="text" id="searchInput" placeholder="Search by text or tag..." />
+    </section>
+
+    <section id="entriesSection">
+        <h3>Diary Entries</h3>
+        <div id="entriesList"></div>
+    </section>
+
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
+</div>
+
+<div id="cookieConsent" class="cookie-banner">
+    <p>
+        We use cookies to save your diary entries locally and improve your experience.
+        By continuing, you agree to our use of cookies.
+    </p>
+    <div class="cookie-buttons">
+        <button id="acceptCookiesBtn">I Accept</button>
+        <button id="denyCookiesBtn">I Deny</button>
     </div>
 </div>
 
-<div id="characterContainer">
-    <img id="bodyBaseImage" src="Assets/Base.png">
-</div>
-
-<div id="submitContainer">
-    <button class="button" id="submitButton">Submit</button>
-</div>
 
 <script src="CharacterCreation.js"></script>
 </body>
