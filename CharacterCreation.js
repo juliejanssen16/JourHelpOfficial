@@ -102,7 +102,7 @@ saveCharBtn.addEventListener('click', () => {
     };
 
     characters.push(newChar);
-    saveData();
+    saveToLocalStorage();
     updateCharacterList();
     resetCharacterCreation();
 
@@ -185,7 +185,7 @@ function updateCharacterList() {
 function deleteCharacter(charId) {
     characters = characters.filter(c => c.id !== charId);
     entries = entries.filter(e => e.characterId !== charId);
-    saveData();
+    saveToLocalStorage();
     updateCharacterList();
     populateCharacterSelect();
     renderEntries();
@@ -247,7 +247,7 @@ document.getElementById('saveEntryBtn').addEventListener('click', () => {
     };
 
     entries.push(newEntry);
-    saveData();
+    saveToLocalStorage();
 
     entryText.value = '';
     entryTagsInput.value = '';
@@ -326,15 +326,9 @@ function renderEntries() {
 // Delete diary entry by id
 function deleteEntry(entryId) {
     entries = entries.filter(e => e.id !== entryId);
-    saveData();
+    saveToLocalStorage();
     renderEntries();
     drawMoodGraph(Number(selectCharacterEntry.value));
-}
-
-// Save all data to localStorage
-function saveData() {
-    localStorage.setItem('characters', JSON.stringify(characters));
-    localStorage.setItem('entries', JSON.stringify(entries));
 }
 
 // Load all data from localStorage

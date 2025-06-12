@@ -6,6 +6,34 @@
     <title>Character Diary App</title>
     <link rel="stylesheet" href="CharacterCreation.css" />
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet" />
+    <style>
+        /* Simple styling for cookie banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: #222;
+            color: white;
+            padding: 15px 20px;
+            font-family: Arial, sans-serif;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        #cookie-banner button {
+            background: #4caf50;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        #cookie-banner button.decline {
+            background: #f44336;
+        }
+    </style>
 </head>
 <body>
 <button id="musicToggleBtn">🔈 Play Music</button>
@@ -115,7 +143,7 @@
 
 <audio id="backgroundMusic" src="cute-music.mp3" loop muted></audio>
 
-<div id="cookie-banner" style="display:none;">
+<div id="cookie-banner">
     <div>
         We use cookies to improve your experience. Do you accept cookies?
     </div>
@@ -130,7 +158,10 @@
     const consent = localStorage.getItem('cookie-consent');
 
     function showBanner() {
-        document.getElementById('cookie-banner').style.display = 'flex';
+        const banner = document.getElementById('cookie-banner');
+        banner.style.display = 'flex';
+        banner.style.justifyContent = 'space-between';
+        banner.style.alignItems = 'center';
     }
     function hideBanner() {
         document.getElementById('cookie-banner').style.display = 'none';
@@ -150,9 +181,24 @@
         // Do NOT store decline - so banner will appear again next reload
         hideBanner();
     });
+
+    // Consent check function
+    function canUseLocalStorage() {
+        return localStorage.getItem('cookie-consent') === 'accepted';
+    }
+
+    // Wrapper function for saving data to localStorage respecting consent
+    function saveToLocalStorage(key, value) {
+        if (!canUseLocalStorage()) {
+            console.log(`LocalStorage save blocked for "${key}" because consent not given.`);
+            return;
+        }
+        localStorage.setItem(key, value);
+    }
+
+    // Expose globally so CharacterCreation.js can use it
+    window.saveToLocalStorage = saveToLocalStorage;
 </script>
-
-
 
 <script src="CharacterCreation.js"></script>
 <script src="sparkles.js"></script> <!-- added script for sparkles -->
