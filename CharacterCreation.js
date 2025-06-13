@@ -498,47 +498,101 @@ createNewCharBtn.addEventListener('click', () => {
 
 // --- Mood graph drawing ---
 // Draw a simple graph showing count of each mood in current filtered entries
+// --- Draw circular pink mood graph ---
 function drawMoodGraph(entriesToDraw) {
-    // Clear canvas first
-    moodGraphCtx.clearRect(0, 0, moodGraphCanvas.width, moodGraphCanvas.height);
+    const ctx = moodGraphCtx;
+    const canvas = moodGraphCanvas;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Count occurrences of each mood
+    if (entriesToDraw.length === 0) return;
+
+    // Count entries per mood
     const moodCounts = {};
-    entriesToDraw.forEach(e => {
-        moodCounts[e.mood] = (moodCounts[e.mood] || 0) + 1;
+    entriesToDraw.forEach(entry => {
+        moodCounts[entry.mood] = (moodCounts[entry.mood] || 0) + 1;
     });
 
+    const total = entriesToDraw.length;
     const moods = Object.keys(moodCounts);
-    if (moods.length === 0) return; // Nothing to draw
 
-    // Graph dimensions and bar settings
-    const width = moodGraphCanvas.width;
-    const height = moodGraphCanvas.height;
-    const barWidth = width / moods.length * 0.6;
-    const maxCount = Math.max(...Object.values(moodCounts));
+    // Pink color palette
+    const pinkColors = {
+        happy: '#ffb6c1',
+        sad: '#ffc0cb',
+        angry: '#ff69b4',
+        neutral: '#f99fbc',
+        excited: '#ff85a2',
+        default: '#ffccdc'
+    };
 
-    moods.forEach((mood, i) => {
+    // Chart position & radius
+    const padding = 20;
+    const legendWidth = 120;
+    const chartAreaWidth = canvas.width - legendWidth - padding * 2;
+    const radius = Math.min(chartAreaWidth, canvas.height) / 2 - padding;
+    const centerX = radius + padding;
+    const centerY = canvas.height / 2;
+
+    // Draw donut segments
+    let startAngle = 0;
+    moods.forEach(mood => {
         const count = moodCounts[mood];
-        const barHeight = (count / maxCount) * (height - 30); // leave space for labels
+        const angle = (count / total) * 2 * Math.PI;
+        const color = pinkColors[mood] || pinkColors.default;
 
-        // Bar position
-        const x = i * (width / moods.length) + (width / moods.length - barWidth) / 2;
-        const y = height - barHeight - 20;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, startAngle, startAngle + angle);
+        ctx.closePath();
+        ctx.fillStyle = color;
+        ctx.fill();
 
-        // Set fill color based on mood
-        moodGraphCtx.fillStyle = getMoodColor(mood);
-        moodGraphCtx.fillRect(x, y, barWidth, barHeight);
+        startAngle += angle;
+    });
 
-        // Draw mood label below bar
-        moodGraphCtx.fillStyle = 'black';
-        moodGraphCtx.font = '14px Arial';
-        moodGraphCtx.textAlign = 'center';
-        moodGraphCtx.fillText(mood, x + barWidth / 2, height - 5);
+    // Draw inner white circle for donut effect
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius * 0.4, 0, 2 * Math.PI);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
 
-        // Draw count above bar
-        moodGraphCtx.fillText(count, x + barWidth / 2, y - 5);
+    // Center label
+    ctx.fillStyle = '#ff69b4';
+    ctx.font = '16px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(`${total} mood${total !== 1 ? 's' : ''}`, centerX, centerY + 6);
+
+    // Draw Legend on the right
+    const legendX = chartAreaWidth + padding * 2;
+    let legendY = padding;
+    const boxSize = 14;
+    const spacing = 22;
+
+    // Optional legend title
+    ctx.fillStyle = '#ff69b4';
+    ctx.font = '14px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText("Legend", legendX, legendY);
+
+    legendY += 10;
+
+    moods.forEach(mood => {
+        const color = pinkColors[mood] || pinkColors.default;
+
+        // Color box
+        ctx.fillStyle = color;
+        ctx.fillRect(legendX, legendY, boxSize, boxSize);
+
+        // Mood label
+        ctx.fillStyle = '#333';
+        ctx.font = '13px sans-serif';
+        ctx.fillText(mood.charAt(0).toUpperCase() + mood.slice(1), legendX + boxSize + 6, legendY + boxSize - 2);
+
+        legendY += spacing;
     });
 }
+
+
 
 // --- Background music toggle ---
 // Toggle background music playback on button click
@@ -572,5 +626,7 @@ function init() {
         appSection.classList.add('hidden');
     }
 }
+
+
 
 init(); // Run initialization when script loads

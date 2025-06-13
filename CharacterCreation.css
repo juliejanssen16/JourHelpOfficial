@@ -248,3 +248,10 @@ canvas {
     background-color: #ff3d9b;
     color: white;
 }
+
+#moodGraph {
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ff69b4;
+    margin-top: 10px;
+    background-color: #fff0f5;
+}
