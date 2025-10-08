@@ -1,22 +1,46 @@
 <!DOCTYPE html>
+<!-- This tells the browser that this is an HTML5 document -->
+
 <html lang="en">
+<!-- The root of your HTML page; 'lang="en"' sets the language to English -->
+
 <head>
+    <!-- The head section contains metadata and links to styles/scripts -->
     <meta charset="UTF-8" />
+    <!-- Sets the character encoding so special symbols display correctly -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Makes the page responsive on mobile devices -->
+
     <title>Character Diary App</title>
+    <!-- The title that appears in the browser tab -->
+
     <link rel="stylesheet" href="CharacterCreation.css" />
+    <!-- Links to your CSS file for styling the page -->
+
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet" />
+    <!-- Imports a Google font to use on the page -->
 </head>
+
 <body>
+<!-- All visible content of your page goes inside the body tag -->
+
 <button id="musicToggleBtn">🔈 Play Music</button>
+<!-- Button to toggle background music on and off -->
 
-<div id="sparkles"></div> <!-- Sparkles container -->
+<div id="sparkles"></div>
+<!-- A container for animated sparkles (decorative effect) -->
 
+<!-- Character Creation Section -->
 <section id="characterCreationSection">
     <h2>Create New Character</h2>
-    <label for="charNameInput">Name:</label>
-    <input id="charNameInput" type="text" placeholder="Character Name" />
 
+    <label for="charNameInput">Name:</label>
+    <!-- Label for the character name input field -->
+    <input id="charNameInput" type="text" placeholder="Character Name" />
+    <!-- Input where users type their character's name -->
+
+    <!-- Species selection -->
     <div id="speciesGroup" class="trait-group">
         <p>Species:</p>
         <button class="trait-btn">Human</button>
@@ -24,6 +48,7 @@
         <button class="trait-btn">Orc</button>
     </div>
 
+    <!-- Hair color selection -->
     <div id="hairGroup" class="trait-group">
         <p>Hair:</p>
         <button class="trait-btn">Black</button>
@@ -31,6 +56,7 @@
         <button class="trait-btn">Red</button>
     </div>
 
+    <!-- Eye color selection -->
     <div id="eyeColorGroup" class="trait-group">
         <p>Eye Color:</p>
         <button class="trait-btn">Blue</button>
@@ -38,16 +64,24 @@
         <button class="trait-btn">Brown</button>
     </div>
 
+    <!-- Color picker for choosing a custom color -->
     <label for="charColorPicker">Character Color:</label>
     <input id="charColorPicker" type="color" value="#ff69b4" />
 
+    <!-- Button to save the created character -->
     <button id="saveCharBtn">Save Character</button>
 </section>
 
+<!-- Character List Section -->
 <section id="characterListSection" class="hidden">
     <h2>Characters</h2>
     <ul id="charList"></ul>
+    <!-- List of created characters will appear here -->
+
     <button id="createNewCharBtn">Create New Character</button>
+    <!-- Button to go back and create another character -->
+
+    <!-- Dropdown to sort characters -->
     <label for="sortCharacters">Sort Characters:</label>
     <select id="sortCharacters">
         <option value="name-asc">Name Ascending</option>
@@ -58,16 +92,22 @@
     </select>
 </section>
 
+<!-- Diary Entry Section -->
 <section id="appSection" class="hidden">
     <h2 id="characterNameHeader">Diary for: </h2>
+
+    <!-- Select a character to write a diary entry for -->
     <label for="selectCharacterEntry">Select Character:</label>
     <select id="selectCharacterEntry"></select>
 
+    <!-- Text area for writing the diary entry -->
     <textarea id="entryText" rows="5" placeholder="Write your diary entry here..."></textarea>
 
+    <!-- Add tags to entries (like "happy", "school", etc.) -->
     <label for="entryTags">Tags (comma separated):</label>
     <input id="entryTags" type="text" placeholder="e.g. happy, vacation" />
 
+    <!-- Mood selection dropdown -->
     <label for="moodSelect">Mood:</label>
     <select id="moodSelect">
         <option value="neutral">Neutral</option>
@@ -76,9 +116,12 @@
         <option value="anxious">Anxious</option>
     </select>
 
+    <!-- Button to save the diary entry -->
     <button id="saveEntryBtn">Save Diary Entry</button>
 
+    <!-- Filters and search options for diary entries -->
     <h3>Filters & Search</h3>
+
     <label for="filterMood">Filter by Mood:</label>
     <select id="filterMood">
         <option value="all">All</option>
@@ -94,29 +137,35 @@
     <label for="searchInput">Search Text:</label>
     <input id="searchInput" type="text" placeholder="Search entries..." />
 
+    <!-- Dropdown to sort diary entries -->
     <label for="sortEntries">Sort Entries:</label>
     <select id="sortEntries">
         <option value="date-desc">Newest First</option>
         <option value="date-asc">Oldest First</option>
     </select>
 
+    <!-- List where diary entries will be displayed -->
     <ul id="entriesList"></ul>
 
+    <!-- Button to view all entries across all characters -->
     <button id="showAllEntriesBtn">Show All Entries Overview</button>
 
+    <!-- Canvas for drawing a graph (like mood over time) -->
     <canvas id="moodGraph" width="600" height="200"></canvas>
 </section>
 
+<!-- Overview Section to see all diary entries at once -->
 <section id="allEntriesOverviewSection" class="hidden">
     <h2>All Diary Entries</h2>
     <div id="allEntriesOverviewList"></div>
     <button id="closeOverviewBtn">Close Overview</button>
 </section>
 
+<!-- Audio element that holds background music -->
 <audio id="backgroundMusic" src="cute-music.mp3" loop muted></audio>
 
+<!-- Link to JavaScript files that handle functionality -->
 <script src="CharacterCreation.js"></script>
-<script src="sparkles.js"></script> <!-- added script for sparkles -->
+<script src="sparkles.js"></script> <!-- Sparkle effect script -->
 </body>
 </html>
-
