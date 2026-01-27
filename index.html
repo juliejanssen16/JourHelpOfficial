@@ -78,9 +78,12 @@
       * {
         box-sizing: border-box;
       }
+
+      /* CHANGED: JS handles smooth scrolling (soft/extra soft) */
       html {
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
       }
+
       body {
         margin: 0;
         font-family: var(--font);
@@ -249,7 +252,7 @@
       }
 
       /* -------------------------------------------
-         NEW: Mobile header layout fix + collapse
+         Mobile header layout fix + collapse
          - Desktop unchanged
          - Mobile stacks to avoid overlap
          - Mobile nav scrolls horizontally
@@ -1165,12 +1168,58 @@
       }
       syncSwitches();
 
+      // -----------------------------
+      // Motion mode: make changes APPLY LIVE
+      // -----------------------------
+      let revealObs = null;
+
+      function getScrollDuration() {
+        // Super noticeable difference
+        return root.dataset.motion === "reduced" ? 1600 : 700;
+      }
+
+      function applyMotionMode() {
+        const revealEls = Array.from(document.querySelectorAll(".reveal"));
+
+        if (root.dataset.motion === "reduced") {
+          // show everything immediately (no reveal observer)
+          revealEls.forEach((el) => el.classList.add("is-in"));
+          if (revealObs) {
+            revealObs.disconnect();
+            revealObs = null;
+          }
+          return;
+        }
+
+        // normal motion: enable reveal observer for items not yet in view
+        if (!revealObs) {
+          revealObs = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) e.target.classList.add("is-in");
+              });
+            },
+            { threshold: 0.12 }
+          );
+        }
+
+        revealEls.forEach((el) => {
+          if (!el.classList.contains("is-in")) revealObs.observe(el);
+        });
+      }
+
+      // Apply on load
+      applyMotionMode();
+
       motionSwitch.addEventListener("click", () => {
         const next = root.dataset.motion === "reduced" ? "normal" : "reduced";
         if (next === "normal") delete root.dataset.motion;
         else root.dataset.motion = "reduced";
+
         localStorage.setItem("motion", next);
         syncSwitches();
+        applyMotionMode();
+
         showToast(
           next === "reduced" ? "Motion reduced 🌿" : "Motion restored ✨"
         );
@@ -1187,12 +1236,66 @@
         );
       });
 
-      // Scroll to top
-      document.getElementById("scrollTopBtn").addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: root.dataset.motion === "reduced" ? "auto" : "smooth",
+      // -----------------------------
+      // Soft anchor scrolling
+      // - default: soft
+      // - reduced motion: EXTRA soft
+      // -----------------------------
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function smoothScrollToY(targetY, durationMs) {
+        const startY = window.scrollY || window.pageYOffset;
+        const delta = targetY - startY;
+        const startT = performance.now();
+
+        function step(now) {
+          const t = Math.min(1, (now - startT) / durationMs);
+          const eased = easeInOutCubic(t);
+          window.scrollTo(0, startY + delta * eased);
+          if (t < 1) requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      function scrollToElement(el) {
+        if (!el) return;
+
+        const headerEl = document.querySelector("header");
+        const headerH = headerEl ? headerEl.getBoundingClientRect().height : 0;
+
+        const y =
+          window.scrollY + el.getBoundingClientRect().top - headerH - 10;
+
+        const duration = getScrollDuration();
+        smoothScrollToY(Math.max(0, y), duration);
+
+        // accessibility: focus target after scroll without moving it again
+        if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1");
+        setTimeout(() => el.focus({ preventScroll: true }), duration + 50);
+      }
+
+      // Intercept in-page anchor clicks (nav + hero buttons)
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const href = a.getAttribute("href");
+          if (!href || href === "#") return;
+
+          const target = document.querySelector(href);
+          if (!target) return;
+
+          e.preventDefault();
+          scrollToElement(target);
+
+          history.pushState(null, "", href);
         });
+      });
+
+      // Scroll to top (soft / extra soft)
+      document.getElementById("scrollTopBtn").addEventListener("click", () => {
+        smoothScrollToY(0, getScrollDuration());
       });
 
       // Active nav highlighting
@@ -1214,24 +1317,7 @@
         },
         { rootMargin: "-45% 0px -50% 0px", threshold: 0.01 }
       );
-
       sections.forEach((sec) => activeObs.observe(sec));
-
-      // Reveal animations (respect reduced motion)
-      const revealEls = Array.from(document.querySelectorAll(".reveal"));
-      if (root.dataset.motion === "reduced") {
-        revealEls.forEach((el) => el.classList.add("is-in"));
-      } else {
-        const revealObs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) e.target.classList.add("is-in");
-            });
-          },
-          { threshold: 0.12 }
-        );
-        revealEls.forEach((el) => revealObs.observe(el));
-      }
 
       // Footer year
       document.getElementById("year").textContent = new Date().getFullYear();
@@ -1307,7 +1393,7 @@
       }
 
       // -----------------------------
-      // NEW: Collapse header on scroll (ONLY <= 768px)
+      // Collapse header on scroll (ONLY <= 768px)
       // -----------------------------
       const header = document.querySelector("header");
 
