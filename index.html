@@ -169,16 +169,15 @@
         letter-spacing: -0.02em;
       }
 
-      /* NEW: long logo image styling (reduces “empty” space feel) */
+      /* Logo image styling (DESKTOP unchanged) */
       .brandLogo {
-        height: 100px; /* tweak 22–30px */
-        width: 200px; /* tweak 120–160px */
+        height: 100px;
+        width: 200px;
         display: block;
-
         object-fit: contain;
 
         /* “Zoom in” to reduce transparent padding look */
-        transform: scale(1.18); /* tweak 1.05–1.35 */
+        transform: scale(1.18);
         transform-origin: left center;
 
         /* avoids baseline gap */
@@ -206,6 +205,7 @@
         display: inline-flex;
         gap: 10px;
         align-items: center;
+        white-space: nowrap;
       }
       .chip:hover {
         transform: translateY(-1px);
@@ -233,6 +233,7 @@
         display: inline-flex;
         gap: 10px;
         align-items: center;
+        white-space: nowrap;
       }
       .btn:hover {
         transform: translateY(-1px);
@@ -245,6 +246,80 @@
           rgba(168, 214, 255, 0.85)
         );
         border-color: rgba(30, 34, 64, 0.14);
+      }
+
+      /* -------------------------------------------
+         NEW: Mobile header layout fix + collapse
+         - Desktop unchanged
+         - Mobile stacks to avoid overlap
+         - Mobile nav scrolls horizontally
+         ------------------------------------------- */
+
+      /* smooth transitions for compact toggle */
+      header,
+      .wrap.nav,
+      .brandLogo,
+      .chip,
+      .btn {
+        transition: padding var(--dur) var(--ease),
+          box-shadow var(--dur) var(--ease), height var(--dur) var(--ease),
+          width var(--dur) var(--ease), transform var(--dur) var(--ease),
+          font-size var(--dur) var(--ease);
+      }
+
+      @media (max-width: 768px) {
+        /* Stack header content so logo can't overlay nav */
+        .wrap.nav {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .brand {
+          width: 100%;
+        }
+
+        /* Keep logo from forcing overflow */
+        .brandLogo {
+          max-width: 100%;
+        }
+
+        /* Nav becomes a single horizontally scrollable row */
+        .navlinks {
+          width: 100%;
+          justify-content: flex-start;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 6px;
+        }
+        .navlinks > * {
+          flex: 0 0 auto;
+        }
+        .navlinks::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        /* Compact mode on scroll */
+        header.is-compact {
+          box-shadow: 0 10px 30px rgba(20, 25, 50, 0.08);
+        }
+        header.is-compact .wrap.nav {
+          padding: 6px 0;
+        }
+        header.is-compact .brandLogo {
+          height: 56px;
+          width: 150px;
+          transform: scale(1.06);
+        }
+        header.is-compact .chip {
+          padding: 8px 10px;
+          font-size: 14px;
+        }
+        header.is-compact .btn {
+          padding: 8px 12px;
+          font-size: 14px;
+        }
       }
 
       main {
@@ -531,7 +606,7 @@
         font-size: 13px;
       }
 
-      /* NEW: list styling for resources section */
+      /* list styling */
       .list {
         margin: 12px 0 0;
         padding-left: 18px;
@@ -1181,7 +1256,6 @@
         "Your needs are real — and you’re allowed to honor them 🩷",
         "You’re not “too much.” You’re a full person with a real nervous system 🌿",
         "Clarity and comfort are valid goals ✨",
-
         "It’s okay to take up space — gently, fully, honestly 🌸",
         "You don’t have to earn rest. You’re allowed to recover 🫧",
         "Your pace is valid. Slow is still progress 🐢✨",
@@ -1231,8 +1305,28 @@
           toast.style.transform = "translateX(-50%) translateY(18px)";
         }, 2600);
       }
+
+      // -----------------------------
+      // NEW: Collapse header on scroll (ONLY <= 768px)
+      // -----------------------------
+      const header = document.querySelector("header");
+
+      function updateHeaderCompact() {
+        const isSmall = window.matchMedia("(max-width: 768px)").matches;
+        if (!isSmall) {
+          header.classList.remove("is-compact");
+          return;
+        }
+        header.classList.toggle("is-compact", window.scrollY > 40);
+      }
+
+      updateHeaderCompact();
+      window.addEventListener(
+        "scroll",
+        () => window.requestAnimationFrame(updateHeaderCompact),
+        { passive: true }
+      );
+      window.addEventListener("resize", updateHeaderCompact);
     </script>
   </body>
 </html>
-<!DOCTYPE html>
-<html lang="en"></html>
