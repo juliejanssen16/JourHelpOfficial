@@ -168,31 +168,21 @@
         font-weight: 800;
         letter-spacing: -0.02em;
       }
-      .logo {
-        width: 42px;
-        height: 42px;
-        border-radius: 14px;
-        background: radial-gradient(
-            18px 18px at 30% 30%,
-            rgba(255, 255, 255, 0.95),
-            transparent 60%
-          ),
-          linear-gradient(135deg, var(--pink-strong), var(--blue-strong));
-        box-shadow: var(--shadow-sm);
-        border: 1px solid var(--border);
-        position: relative;
-        overflow: hidden;
-      }
-      .logo::after {
-        content: "";
-        position: absolute;
-        inset: -40% -40%;
-        background: radial-gradient(
-          circle at 30% 30%,
-          rgba(255, 255, 255, 0.65),
-          transparent 55%
-        );
-        transform: rotate(18deg);
+
+      /* NEW: long logo image styling (reduces “empty” space feel) */
+      .brandLogo {
+        height: 100px; /* tweak 22–30px */
+        width: 200px; /* tweak 120–160px */
+        display: block;
+
+        object-fit: contain;
+
+        /* “Zoom in” to reduce transparent padding look */
+        transform: scale(1.18); /* tweak 1.05–1.35 */
+        transform-origin: left center;
+
+        /* avoids baseline gap */
+        line-height: 0;
       }
 
       .navlinks {
@@ -632,18 +622,12 @@
     <header>
       <div class="wrap nav" aria-label="Primary navigation">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
           <div>
-            <div
-              style="
-                font-size: 14px;
-                opacity: 0.8;
-                font-weight: 800;
-                letter-spacing: -0.01em;
-              "
-            >
-              YourHelp
-            </div>
+            <img
+              class="brandLogo"
+              src="YourHelpLogoLong-removebg-preview.png"
+              alt="YourHelp"
+            />
             <div style="font-size: 12px; opacity: 0.62; font-weight: 700">
               Autism • Neurodiversity • Support
             </div>
@@ -929,7 +913,6 @@
         </div>
       </section>
 
-      <!-- ✅ UPDATED RESOURCES SECTION -->
       <section id="resources" class="reveal" aria-labelledby="h-resources">
         <div class="sectionHead">
           <div>
