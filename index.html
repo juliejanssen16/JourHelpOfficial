@@ -541,6 +541,25 @@
         font-size: 13px;
       }
 
+      /* NEW: list styling for resources section */
+      .list {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+      .list li {
+        margin: 8px 0;
+      }
+      .list a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 1.5px;
+      }
+      .list a:hover {
+        opacity: 0.9;
+      }
+
       /* Quote panel */
       .quote {
         display: flex;
@@ -910,51 +929,106 @@
         </div>
       </section>
 
+      <!-- ✅ UPDATED RESOURCES SECTION -->
       <section id="resources" class="reveal" aria-labelledby="h-resources">
         <div class="sectionHead">
           <div>
             <h2 id="h-resources">Resources & next steps</h2>
             <p class="sub">
-              Want this to be for a school project, a portfolio piece, or your
-              personal advocacy page? You can customize the sections and add
-              local helplines/orgs.
+              You don’t need to do everything at once. Pick one small step that
+              feels supportive — and ignore the rest for now.
             </p>
           </div>
         </div>
 
         <div class="grid3">
           <article class="mini">
-            <h3>Self-advocacy</h3>
+            <h3>Learn & self-understand</h3>
             <p>
-              Add a page: “What helps me” with preferred communication, sensory
-              needs, and recovery time.
+              Neurodiversity-affirming explanations and lived experience can
+              help you name your patterns without shame.
             </p>
+            <ul class="list">
+              <li>
+                <a
+                  href="https://neuroclastic.com/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  NeuroClastic
+                </a>
+                — autistic-led articles & perspectives
+              </li>
+              <li>
+                <a
+                  href="https://embrace-autism.com/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Embrace Autism
+                </a>
+                — identity-affirming explanations & self-reflection tools
+              </li>
+              <li>
+                <a
+                  href="https://autisticadvocacy.org/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Autistic Self Advocacy Network (ASAN)
+                </a>
+              </li>
+            </ul>
             <span class="tag"
-              ><span aria-hidden="true">🗣️</span> Personal profile</span
+              ><span aria-hidden="true">📘</span> Understanding</span
             >
           </article>
 
           <article class="mini">
-            <h3>Work/school accommodations</h3>
+            <h3>Practical support & accommodations</h3>
             <p>
-              Include examples: written instructions, flexible lighting, breaks,
-              predictable schedules, async options.
+              Support is about reducing friction — not proving you “need it
+              badly enough.” These ideas can make daily life gentler.
             </p>
+            <ul class="list">
+              <li>Create a short “What helps me” note</li>
+              <li>Request written instructions or follow-ups</li>
+              <li>Ask for sensory adjustments or breaks</li>
+              <li>Use checklists instead of verbal-only tasks</li>
+            </ul>
             <span class="tag"
-              ><span aria-hidden="true">🏫</span> Practical supports</span
+              ><span aria-hidden="true">🧠</span> Reduce load</span
             >
           </article>
 
           <article class="mini">
-            <h3>Community</h3>
+            <h3>Community & connection</h3>
             <p>
-              Curate autistic-led voices, peer groups, and
-              neurodiversity-affirming providers.
+              You don’t have to figure this out alone. Autistic-led spaces often
+              feel safer, slower, and more validating.
             </p>
+            <ul class="list">
+              <li>Peer support groups (online or local)</li>
+              <li>Autistic-led communities & forums</li>
+              <li>Creators sharing lived autistic experience</li>
+            </ul>
             <span class="tag"
-              ><span aria-hidden="true">🤝</span> Connection</span
+              ><span aria-hidden="true">🤝</span> You’re not alone</span
             >
           </article>
+        </div>
+
+        <div class="card" style="margin-top: 14px">
+          <div class="quote">
+            <div class="mark" aria-hidden="true">“</div>
+            <div>
+              <blockquote>
+                A good next step is one that makes your life a little easier —
+                not one that exhausts you. You’re allowed to go slowly.
+              </blockquote>
+              <cite>— Gentle guidance</cite>
+            </div>
+          </div>
         </div>
 
         <div class="hero-actions" style="margin-top: 16px">
@@ -969,14 +1043,16 @@
 
       <footer>
         <div class="foot">
-          <div style="font-weight: 750">
-            © <span id="year"></span> YourHelp
-          </div>
+          <div style="font-weight: 750">© <span id="year"></span> YourHelp</div>
           <div>
             Created with care by
-            <a href="https://juliejanssen16.github.io/" target="_blank" rel="noopener"
+            <a
+              href="https://juliejanssen16.github.io/"
+              target="_blank"
+              rel="noopener"
               >Julie Janssen</a
             >
+          </div>
         </div>
       </footer>
     </main>
@@ -1143,3 +1219,5 @@
     </script>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="en"></html>
