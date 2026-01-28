@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -54,8 +54,9 @@
         --dur: 520ms;
 
         /* Typography */
-        --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        --font:
+          ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial, "Apple Color Emoji", "Segoe UI Emoji";
       }
 
       /* High-contrast assist mode */
@@ -88,7 +89,8 @@
         margin: 0;
         font-family: var(--font);
         color: var(--text);
-        background: radial-gradient(
+        background:
+          radial-gradient(
             1100px 600px at 12% 6%,
             rgba(255, 210, 233, 0.7),
             transparent 55%
@@ -205,7 +207,8 @@
         background: rgba(255, 255, 255, 0.55);
         border: 1px solid var(--border);
         box-shadow: 0 8px 22px rgba(20, 25, 50, 0.06);
-        transition: transform var(--dur) var(--ease),
+        transition:
+          transform var(--dur) var(--ease),
           background var(--dur) var(--ease);
         font-weight: 650;
         color: rgba(26, 27, 46, 0.82);
@@ -235,7 +238,8 @@
         box-shadow: var(--shadow-sm);
         cursor: pointer;
         font-weight: 700;
-        transition: transform var(--dur) var(--ease),
+        transition:
+          transform var(--dur) var(--ease),
           box-shadow var(--dur) var(--ease);
         display: inline-flex;
         gap: 10px;
@@ -264,9 +268,12 @@
       .brandLogo,
       .chip,
       .btn {
-        transition: padding var(--dur) var(--ease),
-          box-shadow var(--dur) var(--ease), height var(--dur) var(--ease),
-          width var(--dur) var(--ease), transform var(--dur) var(--ease),
+        transition:
+          padding var(--dur) var(--ease),
+          box-shadow var(--dur) var(--ease),
+          height var(--dur) var(--ease),
+          width var(--dur) var(--ease),
+          transform var(--dur) var(--ease),
           font-size var(--dur) var(--ease);
       }
 
@@ -353,7 +360,8 @@
         content: "";
         position: absolute;
         inset: -2px;
-        background: radial-gradient(
+        background:
+          radial-gradient(
             700px 220px at 10% 10%,
             rgba(255, 185, 220, 0.45),
             transparent 55%
@@ -549,7 +557,8 @@
         background: rgba(255, 255, 255, 0.62);
         border: 1px solid var(--border);
         box-shadow: var(--shadow-sm);
-        transition: transform var(--dur) var(--ease),
+        transition:
+          transform var(--dur) var(--ease),
           box-shadow var(--dur) var(--ease);
         overflow: hidden;
         position: relative;
@@ -563,7 +572,8 @@
         content: "";
         position: absolute;
         inset: -1px;
-        background: radial-gradient(
+        background:
+          radial-gradient(
             320px 120px at 20% 0%,
             rgba(255, 210, 233, 0.35),
             transparent 60%
@@ -680,7 +690,8 @@
       .reveal {
         opacity: 0;
         transform: translateY(12px);
-        transition: opacity var(--dur) var(--ease),
+        transition:
+          opacity var(--dur) var(--ease),
           transform var(--dur) var(--ease);
       }
       .reveal.is-in {
@@ -700,7 +711,7 @@
             <img
               class="brandLogo"
               src="YourHelpLogoLong-removebg-preview.png"
-              alt="YourHelp"
+              alt="JourHelp"
             />
             <div style="font-size: 12px; opacity: 0.62; font-weight: 700">
               Autism • Neurodiversity • Support
@@ -1100,7 +1111,7 @@
 
       <footer>
         <div class="foot">
-          <div style="font-weight: 750">© <span id="year"></span> YourHelp</div>
+          <div style="font-weight: 750">© <span id="year"></span> JourHelp</div>
           <div>
             Created with care by
             <a
@@ -1130,7 +1141,8 @@
         padding: 12px 14px;
         border-radius: 16px;
         z-index: 2000;
-        transition: opacity var(--dur) var(--ease),
+        transition:
+          opacity var(--dur) var(--ease),
           transform var(--dur) var(--ease);
         max-width: min(560px, calc(100% - 24px));
         color: rgba(26, 27, 46, 0.86);
@@ -1193,7 +1205,7 @@
                 if (e.isIntersecting) e.target.classList.add("is-in");
               });
             },
-            { threshold: 0.12 }
+            { threshold: 0.12 },
           );
         }
 
@@ -1214,7 +1226,7 @@
         applyMotionMode();
 
         showToast(
-          next === "reduced" ? "Motion reduced 🌿" : "Motion restored ✨"
+          next === "reduced" ? "Motion reduced 🌿" : "Motion restored ✨",
         );
       });
 
@@ -1225,7 +1237,7 @@
         localStorage.setItem("contrast", next);
         syncSwitches();
         showToast(
-          next === "high" ? "Contrast boosted 🔎" : "Contrast normal 💫"
+          next === "high" ? "Contrast boosted 🔎" : "Contrast normal 💫",
         );
       });
 
@@ -1291,7 +1303,7 @@
         history.pushState(
           null,
           "",
-          window.location.pathname + window.location.search
+          window.location.pathname + window.location.search,
         );
       });
 
@@ -1307,12 +1319,12 @@
             if (!e.isIntersecting) return;
             navLinks.forEach((a) => (a.dataset.active = "false"));
             const hit = navLinks.find(
-              (a) => a.getAttribute("href") === "#" + e.target.id
+              (a) => a.getAttribute("href") === "#" + e.target.id,
             );
             if (hit) hit.dataset.active = "true";
           });
         },
-        { rootMargin: "-45% 0px -50% 0px", threshold: 0.01 }
+        { rootMargin: "-45% 0px -50% 0px", threshold: 0.01 },
       );
 
       sections.forEach((sec) => activeObs.observe(sec));
@@ -1329,7 +1341,7 @@
             showToast("Link copied 🔗");
           } catch {
             showToast(
-              "Couldn’t copy automatically — you can copy from the address bar 🙂"
+              "Couldn’t copy automatically — you can copy from the address bar 🙂",
             );
           }
         });
@@ -1408,7 +1420,7 @@
       window.addEventListener(
         "scroll",
         () => window.requestAnimationFrame(updateHeaderCompact),
-        { passive: true }
+        { passive: true },
       );
       window.addEventListener("resize", updateHeaderCompact);
     </script>
