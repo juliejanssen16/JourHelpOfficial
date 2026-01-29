@@ -11,6 +11,60 @@
     />
 
     <style>
+.gridWithMascot {
+  position: relative;
+}
+
+/* FLOATING above the routines card */
+.mascotFloating {
+  position: absolute;
+
+  /* adjust these two numbers to fine-tune */
+  top: -110px;     /* lifts it ABOVE the cards */
+  right: 40px;     /* aligns it over the 3rd card */
+
+  width: min(300px, 45%);
+  height: auto;
+
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+
+  filter: drop-shadow(0 14px 28px rgba(20, 25, 50, 0.12));
+}
+
+/* Give the hero text a bit of breathing room so it won't collide */
+.hero .card h1,
+.hero .card .lead {
+  padding-right: min(240px, 42%);
+}
+
+/* Responsive: on smaller screens, center it above the title */
+@media (max-width: 960px) {
+  .mascotHero {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: min(320px, 80%);
+    margin: 0 auto 10px;
+    display: block;
+  }
+
+  .hero .card h1,
+  .hero .card .lead {
+    padding-right: 0;
+  }
+}
+
+/* Extra small phones: keep it modest */
+@media (max-width: 420px) {
+  .mascotHero {
+    width: 88%;
+  }
+}
+
+
+
       /* -----------------------------
        Pastel Pro Theme: Pink + Blue
        ----------------------------- */
@@ -853,7 +907,13 @@
           </div>
         </div>
 
-        <div class="grid3">
+        <div class="grid3 gridWithMascot">
+            <img
+    class="mascotFloating"
+    src="MascotJourHelp.png"
+    alt="JourHelp mascot"
+    loading="lazy"
+  />
           <article class="mini">
             <h3>Communication & social style</h3>
             <p>
@@ -876,7 +936,6 @@
               ><span aria-hidden="true">🎧</span> Adjust the environment</span
             >
           </article>
-
           <article class="mini">
             <h3>Patterns, routines, focus</h3>
             <p>
@@ -903,7 +962,8 @@
           </div>
         </div>
 
-        <div class="grid3">
+        <div class="grid3 ">
+
           <article class="mini">
             <h3>Ask, don’t assume</h3>
             <p>
