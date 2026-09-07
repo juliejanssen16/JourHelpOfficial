@@ -1,9 +1,81 @@
 {
-  "updatedAt": "2026-08-31T14:57:18Z",
+  "updatedAt": "2026-09-07T13:23:39Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
+    {
+      "pmid": "42702699",
+      "title": "Autistic and non-autistic children's perceptual decision-making in visual orientation and motion tasks and the effect of task instructions.",
+      "journal": "Attention, perception & psychophysics",
+      "authors": "Thomas L, Scerif G, Yusuf H et al.",
+      "published": "2026-09-06",
+      "preview": "Diffusion decision models (DDMs) offer the potential to go beyond standard accuracy and response-time indices to better understand perceptual decision-making in autism. One unanswered question is whether autistic participants can flexibly adjust the speed and accuracy of their decision-making according to task demands.",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42702699/"
+    },
+    {
+      "pmid": "42566953",
+      "title": "Prospective associations between body appreciation and indices of psychological well-being in autistic adults from the United Kingdom.",
+      "journal": "Body image",
+      "authors": "Longhurst P, Modica C, Swami V",
+      "published": "2026-09-01",
+      "preview": "Body appreciation is a central facet of positive body image that has been associated with stronger psychological well-being in the autistic population. While longitudinal evidence suggests a bidirectional relationship between body appreciation and well-being over time in neurotypical populations, existing research i...",
+      "tags": [
+        "autistic adults"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42566953/"
+    },
+    {
+      "pmid": "42632169",
+      "title": "Co-designed yoga nidra targeting anxiety in autistic children: A mixed methods feasibility study.",
+      "journal": "Research in developmental disabilities",
+      "authors": "Loftus T, Yau SH, Soares S et al.",
+      "published": "2026-09-01",
+      "preview": "Autistic children experience disproportionately high rates of anxiety, yet common interventions such as cognitive behavioural therapy and traditional mindfulness practices may be less effective due to their cognitive and abstract demands. Yoga nidra, a form of guided meditation using concrete visualisations and brea...",
+      "tags": [
+        "support needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42632169/"
+    },
+    {
+      "pmid": "42557909",
+      "title": "Visual Cortical Response Variability in Infants at High Familial Likelihood for Autism.",
+      "journal": "Developmental science",
+      "authors": "Dickinson A, Booth M, Huberty S et al.",
+      "published": "2026-09-01",
+      "preview": "Visual processing undergoes rapid development in the first year of life, supporting the emergence of higher-order cognitive, language, and motor functions. Visual evoked potentials (VEPs) provide a noninvasive measure of visual system maturation that may shed light on heterogeneous developmental trajectories among i...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42557909/"
+    },
+    {
+      "pmid": "42674792",
+      "title": "The ARISE (Autism Research Initiatives for Suicidality and Empowerment) Project: A study protocol for a modified James Lind Alliance priority-setting process determining research priorities for suicidality in autistic youth.",
+      "journal": "BMJ open",
+      "authors": "Andreasen S, Birnie K, Lunsky Y et al.",
+      "published": "2026-08-31",
+      "preview": "Autistic children and adolescents (herein, youth) are at 3.5 times greater risk of suicide attempts and deaths than the general population, with attempts beginning as early as 10 years of age. However, little is known about the predictors of suicidality or how to provide adequate support to prevent premature mortali...",
+      "tags": [
+        "mental health"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42674792/"
+    },
+    {
+      "pmid": "42673582",
+      "title": "Remote Assessment of Physical Function and Physical Activity in Adults With Autism Spectrum Disorder: Protocol for Feasibility, Validity, and Reliability Study.",
+      "journal": "JMIR research protocols",
+      "authors": "Nunez-Gaunaurd A, Tovin MM, Hale M et al.",
+      "published": "2026-08-31",
+      "preview": "Adults with autism spectrum disorder (ASD) are at increased risk for chronic health conditions and reduced quality of life (QoL), often linked to lower physical activity (PA), motor impairments, and barriers to health care access. Although communication and social differences in ASD are well documented, motor impair...",
+      "tags": [
+        "quality of life"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42673582/"
+    },
     {
       "pmid": "42667457",
       "title": "Off-Time Puberty in Autism Spectrum Disorder and ADHD: A Scoping Review of Pubertal Timing, Social Cognition, and Psychopathological Risk.",
@@ -27,80 +99,6 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42616898/"
-    },
-    {
-      "pmid": "42599540",
-      "title": "Eating Disorder Focused Family Therapy with Autistic Children and Young People: A Narrative Review of Recent Developments.",
-      "journal": "Current psychiatry reports",
-      "authors": "Austin A, Loomes R, Duffy F",
-      "published": "2026-08-14",
-      "preview": "This review aims to report the recent advances for eating disorder focused family therapy (FT-ED) for Autistic children and young people, including outcomes, experiences, and suggested adaptations. Quantitative studies suggest that Autistic children and young people (and those with high autistic traits) receiving ou...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42599540/"
-    },
-    {
-      "pmid": "42567865",
-      "title": "Autism in adolescence and adulthood.",
-      "journal": "Scientific reports",
-      "authors": "Denisova K, Jones CRG",
-      "published": "2026-08-07",
-      "preview": "Landmark descriptions of autism in the 1940s were based on clinical work with children. Research over the subsequent 80 years has largely focused on the experiences and needs of autistic children, with recent neuroimaging and genetic studies contributing significant insights into the developmentally driven neurobiol...",
-      "tags": [
-        "mental health",
-        "neurodiversity"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42567865/"
-    },
-    {
-      "pmid": "42548172",
-      "title": "Autism spectrum disorder: has it lost its meaning and is it leading to misdiagnosis?",
-      "journal": "Psychological medicine",
-      "authors": "Frith U",
-      "published": "2026-08-04",
-      "preview": "Since the 1940s, the concept of autism has undergone marked changes, and autism spectrum disorder (ASD) is a wildly heterogenous condition. At the same time, the prevalence of ASD has increased massively.",
-      "tags": [
-        "identity",
-        "masking"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42548172/"
-    },
-    {
-      "pmid": "42552003",
-      "title": "AquOTic: protocol for a type 1 hybrid effectiveness-implementation trial of an occupational therapy-based water competency intervention for children on the autism spectrum.",
-      "journal": "BMJ open",
-      "authors": "Kemp E, Juckett L, Sansone IO et al.",
-      "published": "2026-08-04",
-      "preview": "Drowning is a leading cause of unintentional death among children on the autism spectrum, emphasising the need for tailored water competency interventions. Autism-related factors such as wandering, sensory differences and limited danger awareness increase drowning risk.",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42552003/"
-    },
-    {
-      "pmid": "42548071",
-      "title": "Longitudinal associations among autism and ADHD traits, social maladjustment, and mental health in school-aged children.",
-      "journal": "Psychological medicine",
-      "authors": "Hashimoto E, Ito H, Hamada M et al.",
-      "published": "2026-08-04",
-      "preview": "Neurodevelopmental disorder traits are associated with a range of psychosocial difficulties, yet the longitudinal processes linking these traits to mental health remain insufficiently explored. This study examined developmental associations among autism spectrum disorder (ASD) traits, attention-deficit/hyperactivity...",
-      "tags": [
-        "mental health"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42548071/"
-    },
-    {
-      "pmid": "42584043",
-      "title": "Pain Expectation in Individuals With High Autistic Traits: Decision-Evaluation Processes and Oxytocin Modulation.",
-      "journal": "Annals of the New York Academy of Sciences",
-      "authors": "Zhu J, Chen S, Zhang W et al.",
-      "published": "2026-08-01",
-      "preview": "Pain reflects both sensory input and predictive processes shaped by expectations. Individuals with high autistic traits (HATs) often exhibit atypical pain responses, potentially due to alterations in anticipatory processing.",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42584043/"
     }
   ]
 }
