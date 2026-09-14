@@ -1,9 +1,21 @@
 {
-  "updatedAt": "2026-09-07T13:23:39Z",
+  "updatedAt": "2026-09-14T13:46:53Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
+    {
+      "pmid": "42726881",
+      "title": "Computational mechanisms of perception in autism revealed using games inspired by rodent operant tasks.",
+      "journal": "Science advances",
+      "authors": "Chakravarty S, Do Q, Li Y et al.",
+      "published": "2026-09-11",
+      "preview": "Altered perception is a hallmark of autism spectrum disorder (ASD), yet its underlying mechanisms remain unclear, in part because individuals with greater impairments are often excluded from psychophysics research. Here, we introduce GEODE (gathering evidence to optimize decisions), an online video game designed to...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42726881/"
+    },
     {
       "pmid": "42702699",
       "title": "Autistic and non-autistic children's perceptual decision-making in visual orientation and motion tasks and the effect of task instructions.",
@@ -17,16 +29,16 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42702699/"
     },
     {
-      "pmid": "42566953",
-      "title": "Prospective associations between body appreciation and indices of psychological well-being in autistic adults from the United Kingdom.",
-      "journal": "Body image",
-      "authors": "Longhurst P, Modica C, Swami V",
+      "pmid": "42723326",
+      "title": "Reduced Motor Preparation and Altered EEG Signatures of Prediction in Autistic Adults.",
+      "journal": "The European journal of neuroscience",
+      "authors": "Bagheri S, Cardinaux A, Bungert L et al.",
       "published": "2026-09-01",
-      "preview": "Body appreciation is a central facet of positive body image that has been associated with stronger psychological well-being in the autistic population. While longitudinal evidence suggests a bidirectional relationship between body appreciation and well-being over time in neurotypical populations, existing research i...",
+      "preview": "A standing hypothesis proposes that the social and behavioral diagnostic features of autism may develop as a result of more fundamental difficulties in forming and utilizing predictions. More specifically, in the present study, we hypothesized that autistic individuals are less likely to mobilize motor preparatory p...",
       "tags": [
         "autistic adults"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42566953/"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42723326/"
     },
     {
       "pmid": "42632169",
@@ -41,16 +53,16 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42632169/"
     },
     {
-      "pmid": "42557909",
-      "title": "Visual Cortical Response Variability in Infants at High Familial Likelihood for Autism.",
-      "journal": "Developmental science",
-      "authors": "Dickinson A, Booth M, Huberty S et al.",
+      "pmid": "42704258",
+      "title": "Preserved intrinsic neural timescale organization with hierarchical variation in autism spectrum disorder.",
+      "journal": "Cerebral cortex (New York, N.Y. : 1991)",
+      "authors": "Shikauchi Y, Aoki R, Itahashi T et al.",
       "published": "2026-09-01",
-      "preview": "Visual processing undergoes rapid development in the first year of life, supporting the emergence of higher-order cognitive, language, and motor functions. Visual evoked potentials (VEPs) provide a noninvasive measure of visual system maturation that may shed light on heterogeneous developmental trajectories among i...",
+      "preview": "Intrinsic neural timescales (INTs) index the temporal decay of neural activity and form a hierarchy from fast sensorimotor to slow transmodal regions. Although altered INTs have been reported in autism spectrum disorder (ASD), it remains unclear whether this hierarchical organization is preserved and how individual...",
       "tags": [
         "sensory needs"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42557909/"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42704258/"
     },
     {
       "pmid": "42674792",
@@ -87,18 +99,6 @@
         "masking"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42667457/"
-    },
-    {
-      "pmid": "42616898",
-      "title": "Perceptual meta-uncertainty reveals enhanced calibration of sensory confidence in autism.",
-      "journal": "Science advances",
-      "authors": "Fazioli L, Hadad BS, Denison RN et al.",
-      "published": "2026-08-21",
-      "preview": "Atypical metacognition has been suggested to underlie autistic phenotypes, given its role in social cognition and behavioral flexibility. However, no study has quantitatively assessed metacognitive abilities in autism.",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42616898/"
     }
   ]
 }
