@@ -1,9 +1,33 @@
 {
-  "updatedAt": "2026-09-21T13:47:01Z",
+  "updatedAt": "2026-09-28T15:09:55Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
+    {
+      "pmid": "42797044",
+      "title": "Dietary Diversity in Children with Autism Spectrum Disorders, Feeding Difficulties, and Sensory Issues Related to Eating-A Case-Control Study.",
+      "journal": "Nutrients",
+      "authors": "Grot-Nigowska M, Kowalski O, Białek-Dratwa A",
+      "published": "2026-09-19",
+      "preview": "Background/Objectives: Pediatric feeding disorders are common in children with autism spectrum disorder (ASD) and may result from sensory processing differences, contributing to reduced dietary diversity and increasing the risk of nutritional deficiencies or excessive body weight. This study assessed whether childre...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42797044/"
+    },
+    {
+      "pmid": "42777192",
+      "title": "Mortality characteristics in individuals with autism spectrum disorder across the lifespan: a narrative review.",
+      "journal": "The Turkish journal of pediatrics",
+      "authors": "Kılıç B, Ünal D, Aslan C et al.",
+      "published": "2026-09-11",
+      "preview": "This narrative review provides a comprehensive synthesis of mortality rates and associated risk factors among individuals with autism spectrum disorder (ASD) across the lifespan. Following a search across PubMed, Scopus, and Google Scholar, 31 peer-reviewed studies were identified for synthesis.",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42777192/"
+    },
     {
       "pmid": "42726881",
       "title": "Computational mechanisms of perception in autism revealed using games inspired by rodent operant tasks.",
@@ -53,6 +77,18 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42632169/"
     },
     {
+      "pmid": "42802390",
+      "title": "Prevalence and correlates of depressive disorders among adolescents with autism spectrum disorder in Hong Kong West Cluster.",
+      "journal": "East Asian archives of psychiatry : official journal of the Hong Kong College of Psychiatrists = Dong Ya jing shen ke xue zhi : Xianggang jing shen ke yi xue yuan qi kan",
+      "authors": "Wong WS",
+      "published": "2026-09-01",
+      "preview": "To determine the prevalence and correlates of depressive disorders among adolescents with autism spectrum disorder (ASD) in the Hong Kong West Cluster. Chinese adolescents aged 13 to 17 years with a clinical diagnosis of ASD who had been followed up within the preceding 18 months in the Hong Kong West Cluster were i...",
+      "tags": [
+        "mental health"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42802390/"
+    },
+    {
       "pmid": "42704258",
       "title": "Preserved intrinsic neural timescale organization with hierarchical variation in autism spectrum disorder.",
       "journal": "Cerebral cortex (New York, N.Y. : 1991)",
@@ -63,42 +99,6 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42704258/"
-    },
-    {
-      "pmid": "42674792",
-      "title": "The ARISE (Autism Research Initiatives for Suicidality and Empowerment) Project: A study protocol for a modified James Lind Alliance priority-setting process determining research priorities for suicidality in autistic youth.",
-      "journal": "BMJ open",
-      "authors": "Andreasen S, Birnie K, Lunsky Y et al.",
-      "published": "2026-08-31",
-      "preview": "Autistic children and adolescents (herein, youth) are at 3.5 times greater risk of suicide attempts and deaths than the general population, with attempts beginning as early as 10 years of age. However, little is known about the predictors of suicidality or how to provide adequate support to prevent premature mortali...",
-      "tags": [
-        "mental health"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42674792/"
-    },
-    {
-      "pmid": "42673582",
-      "title": "Remote Assessment of Physical Function and Physical Activity in Adults With Autism Spectrum Disorder: Protocol for Feasibility, Validity, and Reliability Study.",
-      "journal": "JMIR research protocols",
-      "authors": "Nunez-Gaunaurd A, Tovin MM, Hale M et al.",
-      "published": "2026-08-31",
-      "preview": "Adults with autism spectrum disorder (ASD) are at increased risk for chronic health conditions and reduced quality of life (QoL), often linked to lower physical activity (PA), motor impairments, and barriers to health care access. Although communication and social differences in ASD are well documented, motor impair...",
-      "tags": [
-        "quality of life"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42673582/"
-    },
-    {
-      "pmid": "42667457",
-      "title": "Off-Time Puberty in Autism Spectrum Disorder and ADHD: A Scoping Review of Pubertal Timing, Social Cognition, and Psychopathological Risk.",
-      "journal": "Research on child and adolescent psychopathology",
-      "authors": "Sahin B",
-      "published": "2026-08-29",
-      "preview": "Off-time pubertal development defined as pubertal onset or progression deviating meaningfully from age- and sex-matched normative expectations confers heightened risk for internalizing and externalizing psychopathology during adolescence. Children and adolescents with neurodevelopmental disorders (NDDs), including a...",
-      "tags": [
-        "masking"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42667457/"
     }
   ]
 }
