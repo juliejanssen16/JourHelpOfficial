@@ -1,9 +1,61 @@
 {
-  "updatedAt": "2026-09-28T15:09:55Z",
+  "updatedAt": "2026-10-05T15:43:53Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
+    {
+      "pmid": "42711810",
+      "title": "Experiences of autistic transgender and gender diverse adults undergoing gender-affirming hormone therapy and the influence on occupational identity outcomes.",
+      "journal": "Australian occupational therapy journal",
+      "authors": "Miller SL, Bourke-Taylor H, Dixon K et al.",
+      "published": "2026-10-01",
+      "preview": "Autistic transgender and gender diverse (TGD) adults often report additional barriers to health-care access and occupational participation. Gender-affirming hormone therapy (GAHT) consists of hormonal medications a person may choose to take to increase alignment of physical features with their gender identity.",
+      "tags": [
+        "identity",
+        "mental health",
+        "quality of life",
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42711810/"
+    },
+    {
+      "pmid": "42773560",
+      "title": "Rapid Review of the Brief Observation of Social Communication Change (BOSCC) Shows It Can Detect Behavioural Changes in Social Communication in Autism.",
+      "journal": "Autism : the international journal of research and practice",
+      "authors": "Howlin C, Kovalova A, Jaschke A et al.",
+      "published": "2026-10-01",
+      "preview": "Reliable measurement of social communication change remains a major challenge in autism research. The Brief Observation of Social Communication Change (BOSCC) was developed to detect subtle changes in communication.",
+      "tags": [
+        "neurodiversity",
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42773560/"
+    },
+    {
+      "pmid": "42745655",
+      "title": "Longitudinal predictors of internalizing and externalizing behaviors in autism: Examining relationships with ritualistic behavior and social diagnostic features.",
+      "journal": "Development and psychopathology",
+      "authors": "Surmacz M, Coffman MM, Faja S et al.",
+      "published": "2026-10-01",
+      "preview": "Autistic youth commonly experience co-occurring mental health conditions. Core autism features have been linked to internalizing and externalizing symptoms, yet longitudinal pathways remain unclear.",
+      "tags": [
+        "mental health"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42745655/"
+    },
+    {
+      "pmid": "42816505",
+      "title": "Altered semantic prediction error processing with increasing schizotypal and autistic traits.",
+      "journal": "Translational psychiatry",
+      "authors": "Sterner EF, Demler VF, Lenz R et al.",
+      "published": "2026-09-30",
+      "preview": "Predictive processing has been proposed as a framework for symptom development in autism (ASD) and schizophrenia (SSD) spectrum disorders, with ASD being associated with an overweighting of (low-level) sensory evidence whereas SSD is characterized by an overweighting of (high-level) prior beliefs, both resulting in...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42816505/"
+    },
     {
       "pmid": "42797044",
       "title": "Dietary Diversity in Children with Autism Spectrum Disorders, Feeding Difficulties, and Sensory Issues Related to Eating-A Case-Control Study.",
@@ -15,6 +67,18 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42797044/"
+    },
+    {
+      "pmid": "42811899",
+      "title": "Toward a Developmental Timing Framework for Autism: Linking Hemispheric Asymmetry, Motor Organization, and Motor-Social Coupling.",
+      "journal": "Journal of integrative neuroscience",
+      "authors": "Leisman G, Melillo R",
+      "published": "2026-09-15",
+      "preview": "Early behavioral features associated with autism spectrum disorder (ASD) are frequently examined within separate motor, sensory, and social domains rather than as interacting components of a developing neurobiological system. In this article, we present a hypothesis-driven conceptual framework proposing that variati...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42811899/"
     },
     {
       "pmid": "42777192",
@@ -39,66 +103,6 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42726881/"
-    },
-    {
-      "pmid": "42702699",
-      "title": "Autistic and non-autistic children's perceptual decision-making in visual orientation and motion tasks and the effect of task instructions.",
-      "journal": "Attention, perception & psychophysics",
-      "authors": "Thomas L, Scerif G, Yusuf H et al.",
-      "published": "2026-09-06",
-      "preview": "Diffusion decision models (DDMs) offer the potential to go beyond standard accuracy and response-time indices to better understand perceptual decision-making in autism. One unanswered question is whether autistic participants can flexibly adjust the speed and accuracy of their decision-making according to task demands.",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42702699/"
-    },
-    {
-      "pmid": "42723326",
-      "title": "Reduced Motor Preparation and Altered EEG Signatures of Prediction in Autistic Adults.",
-      "journal": "The European journal of neuroscience",
-      "authors": "Bagheri S, Cardinaux A, Bungert L et al.",
-      "published": "2026-09-01",
-      "preview": "A standing hypothesis proposes that the social and behavioral diagnostic features of autism may develop as a result of more fundamental difficulties in forming and utilizing predictions. More specifically, in the present study, we hypothesized that autistic individuals are less likely to mobilize motor preparatory p...",
-      "tags": [
-        "autistic adults"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42723326/"
-    },
-    {
-      "pmid": "42632169",
-      "title": "Co-designed yoga nidra targeting anxiety in autistic children: A mixed methods feasibility study.",
-      "journal": "Research in developmental disabilities",
-      "authors": "Loftus T, Yau SH, Soares S et al.",
-      "published": "2026-09-01",
-      "preview": "Autistic children experience disproportionately high rates of anxiety, yet common interventions such as cognitive behavioural therapy and traditional mindfulness practices may be less effective due to their cognitive and abstract demands. Yoga nidra, a form of guided meditation using concrete visualisations and brea...",
-      "tags": [
-        "support needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42632169/"
-    },
-    {
-      "pmid": "42802390",
-      "title": "Prevalence and correlates of depressive disorders among adolescents with autism spectrum disorder in Hong Kong West Cluster.",
-      "journal": "East Asian archives of psychiatry : official journal of the Hong Kong College of Psychiatrists = Dong Ya jing shen ke xue zhi : Xianggang jing shen ke yi xue yuan qi kan",
-      "authors": "Wong WS",
-      "published": "2026-09-01",
-      "preview": "To determine the prevalence and correlates of depressive disorders among adolescents with autism spectrum disorder (ASD) in the Hong Kong West Cluster. Chinese adolescents aged 13 to 17 years with a clinical diagnosis of ASD who had been followed up within the preceding 18 months in the Hong Kong West Cluster were i...",
-      "tags": [
-        "mental health"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42802390/"
-    },
-    {
-      "pmid": "42704258",
-      "title": "Preserved intrinsic neural timescale organization with hierarchical variation in autism spectrum disorder.",
-      "journal": "Cerebral cortex (New York, N.Y. : 1991)",
-      "authors": "Shikauchi Y, Aoki R, Itahashi T et al.",
-      "published": "2026-09-01",
-      "preview": "Intrinsic neural timescales (INTs) index the temporal decay of neural activity and form a hierarchy from fast sensorimotor to slow transmodal regions. Although altered INTs have been reported in autism spectrum disorder (ASD), it remains unclear whether this hierarchical organization is preserved and how individual...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42704258/"
     }
   ]
 }
