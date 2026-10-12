@@ -1,9 +1,21 @@
 {
-  "updatedAt": "2026-10-05T15:43:53Z",
+  "updatedAt": "2026-10-12T16:36:40Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
+    {
+      "pmid": "42850402",
+      "title": "Considering Autism in Binge-Type Eating Disorders: Broadening Beyond an Anorexia Nervosa-Focused Model.",
+      "journal": "Current psychiatry reports",
+      "authors": "Makin L, Tchanturia K",
+      "published": "2026-10-09",
+      "preview": "Research on Autism in eating disorders (EDs) has historically focused on anorexia nervosa (AN), with comparatively limited attention given to binge-type EDs such as bulimia nervosa (BN) and binge eating disorder (BED). This review summarises emerging evidence on Autism in binge-type EDs and highlights key clinical a...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42850402/"
+    },
     {
       "pmid": "42711810",
       "title": "Experiences of autistic transgender and gender diverse adults undergoing gender-affirming hormone therapy and the influence on occupational identity outcomes.",
@@ -18,6 +30,19 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42711810/"
+    },
+    {
+      "pmid": "42843324",
+      "title": "Sleep Problems and Mental Health in Middle-Aged and Older Autistic and Non-Autistic Adults.",
+      "journal": "International journal of geriatric psychiatry",
+      "authors": "Roper S, Barbinta A, Quinton AMG et al.",
+      "published": "2026-10-01",
+      "preview": "Sleep is a vital biological function, and impaired sleep can lead to a range of problems, including poor health and wellbeing. Poor sleep and higher rates of sleep-related problems and difficulties are often reported by autistic people of all ages, however, these experiences and problems have seldom been studied in...",
+      "tags": [
+        "autistic adults",
+        "mental health"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42843324/"
     },
     {
       "pmid": "42773560",
@@ -45,6 +70,18 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42745655/"
     },
     {
+      "pmid": "42841765",
+      "title": "Effects of High-Phenolic Extra Virgin Olive Oil on Sensory Processing in Children With Autism Spectrum Disorder: A Pilot Study.",
+      "journal": "International journal of developmental neuroscience : the official journal of the International Society for Developmental Neuroscience",
+      "authors": "Papastavridou D, Baldimtsi E, Katsiana A et al.",
+      "published": "2026-10-01",
+      "preview": "No approved treatments currently exist for the core symptoms of autism spectrum disorder (ASD), prompting clinicians and families to seek alternative approaches, including dietary and nutritional interventions. The Mediterranean diet (MeDi), characterized by a high intake of antioxidant and anti-inflammatory compone...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42841765/"
+    },
+    {
       "pmid": "42816505",
       "title": "Altered semantic prediction error processing with increasing schizotypal and autistic traits.",
       "journal": "Translational psychiatry",
@@ -67,42 +104,6 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42797044/"
-    },
-    {
-      "pmid": "42811899",
-      "title": "Toward a Developmental Timing Framework for Autism: Linking Hemispheric Asymmetry, Motor Organization, and Motor-Social Coupling.",
-      "journal": "Journal of integrative neuroscience",
-      "authors": "Leisman G, Melillo R",
-      "published": "2026-09-15",
-      "preview": "Early behavioral features associated with autism spectrum disorder (ASD) are frequently examined within separate motor, sensory, and social domains rather than as interacting components of a developing neurobiological system. In this article, we present a hypothesis-driven conceptual framework proposing that variati...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42811899/"
-    },
-    {
-      "pmid": "42777192",
-      "title": "Mortality characteristics in individuals with autism spectrum disorder across the lifespan: a narrative review.",
-      "journal": "The Turkish journal of pediatrics",
-      "authors": "Kılıç B, Ünal D, Aslan C et al.",
-      "published": "2026-09-11",
-      "preview": "This narrative review provides a comprehensive synthesis of mortality rates and associated risk factors among individuals with autism spectrum disorder (ASD) across the lifespan. Following a search across PubMed, Scopus, and Google Scholar, 31 peer-reviewed studies were identified for synthesis.",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42777192/"
-    },
-    {
-      "pmid": "42726881",
-      "title": "Computational mechanisms of perception in autism revealed using games inspired by rodent operant tasks.",
-      "journal": "Science advances",
-      "authors": "Chakravarty S, Do Q, Li Y et al.",
-      "published": "2026-09-11",
-      "preview": "Altered perception is a hallmark of autism spectrum disorder (ASD), yet its underlying mechanisms remain unclear, in part because individuals with greater impairments are often excluded from psychophysics research. Here, we introduce GEODE (gathering evidence to optimize decisions), an online video game designed to...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42726881/"
     }
   ]
 }
