@@ -1,9 +1,33 @@
 {
-  "updatedAt": "2026-10-12T16:36:40Z",
+  "updatedAt": "2026-10-19T14:28:38Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
+    {
+      "pmid": "42888398",
+      "title": "The active self in autism: multisensory and sensorimotor foundations of bodily self-representation.",
+      "journal": "BMC psychiatry",
+      "authors": "Jahanian Najafabadi A, Rastegari A",
+      "published": "2026-10-15",
+      "preview": "The active self, understood as the embodied sense of self arising from goal-directed action and interaction with the environment, is supported by sensorimotor processes including multisensory integration and proprioception. Atypical self-representation in autism spectrum disorder (ASD) has been proposed to relate to...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42888398/"
+    },
+    {
+      "pmid": "42852593",
+      "title": "Exploring the Neural Mechanisms of Acupuncture Stimulation in Autism Spectrum Disorder: Protocol for a Randomized, Sham-Controlled, Multimodal Neuroimaging Trial.",
+      "journal": "JMIR research protocols",
+      "authors": "Sim J, Choi KS, Lee DH",
+      "published": "2026-10-15",
+      "preview": "Autism spectrum disorder (ASD) is a neurodevelopmental disorder characterized by restricted and repetitive behaviors and disturbances in social communication and interaction. Currently, there is no fundamental treatment for ASD, with only a few medications available for use on a limited basis to manage concomitant n...",
+      "tags": [
+        "quality of life"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42852593/"
+    },
     {
       "pmid": "42850402",
       "title": "Considering Autism in Binge-Type Eating Disorders: Broadening Beyond an Anorexia Nervosa-Focused Model.",
@@ -15,21 +39,6 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42850402/"
-    },
-    {
-      "pmid": "42711810",
-      "title": "Experiences of autistic transgender and gender diverse adults undergoing gender-affirming hormone therapy and the influence on occupational identity outcomes.",
-      "journal": "Australian occupational therapy journal",
-      "authors": "Miller SL, Bourke-Taylor H, Dixon K et al.",
-      "published": "2026-10-01",
-      "preview": "Autistic transgender and gender diverse (TGD) adults often report additional barriers to health-care access and occupational participation. Gender-affirming hormone therapy (GAHT) consists of hormonal medications a person may choose to take to increase alignment of physical features with their gender identity.",
-      "tags": [
-        "identity",
-        "mental health",
-        "quality of life",
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42711810/"
     },
     {
       "pmid": "42843324",
@@ -58,6 +67,18 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42773560/"
     },
     {
+      "pmid": "42874046",
+      "title": "Preoperative Sedation via Cecostomy Tube in an Autistic Adolescent: A Case Report.",
+      "journal": "A&A practice",
+      "authors": "Drillings IM, Jones SE",
+      "published": "2026-10-01",
+      "preview": "Preoperative sedation of autistic children is frequently complicated by challenges in communication, sensory processing, and participation in medical care. We report a 40-kg, 13-year-old autistic boy with a preexisting cecostomy tube for chronic constipation, in whom previous oral and intramuscular sedation had fail...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42874046/"
+    },
+    {
       "pmid": "42745655",
       "title": "Longitudinal predictors of internalizing and externalizing behaviors in autism: Examining relationships with ritualistic behavior and social diagnostic features.",
       "journal": "Development and psychopathology",
@@ -80,30 +101,6 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42841765/"
-    },
-    {
-      "pmid": "42816505",
-      "title": "Altered semantic prediction error processing with increasing schizotypal and autistic traits.",
-      "journal": "Translational psychiatry",
-      "authors": "Sterner EF, Demler VF, Lenz R et al.",
-      "published": "2026-09-30",
-      "preview": "Predictive processing has been proposed as a framework for symptom development in autism (ASD) and schizophrenia (SSD) spectrum disorders, with ASD being associated with an overweighting of (low-level) sensory evidence whereas SSD is characterized by an overweighting of (high-level) prior beliefs, both resulting in...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42816505/"
-    },
-    {
-      "pmid": "42797044",
-      "title": "Dietary Diversity in Children with Autism Spectrum Disorders, Feeding Difficulties, and Sensory Issues Related to Eating-A Case-Control Study.",
-      "journal": "Nutrients",
-      "authors": "Grot-Nigowska M, Kowalski O, Białek-Dratwa A",
-      "published": "2026-09-19",
-      "preview": "Background/Objectives: Pediatric feeding disorders are common in children with autism spectrum disorder (ASD) and may result from sensory processing differences, contributing to reduced dietary diversity and increasing the risk of nutritional deficiencies or excessive body weight. This study assessed whether childre...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42797044/"
     }
   ]
 }
