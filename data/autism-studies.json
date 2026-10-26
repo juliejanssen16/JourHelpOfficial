@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T14:28:38Z",
+  "updatedAt": "2026-10-26T14:02:01Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
@@ -41,6 +41,19 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42850402/"
     },
     {
+      "pmid": "42897981",
+      "title": "Aging in Autism: An Event-Related Potentials Study of Auditory Change Detection.",
+      "journal": "The European journal of neuroscience",
+      "authors": "Bessé M, Morel-Kohlmeyer S, Houy-Durand E et al.",
+      "published": "2026-10-01",
+      "preview": "Autistic individuals are often thought to exhibit reduced tolerance for change, which may stem from atypicalities in sensory processing, particularly in the detection of environmental changes. Within the predictive coding framework, this intolerance may reflect altered generation and updating internal predictions in...",
+      "tags": [
+        "autistic adults",
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897981/"
+    },
+    {
       "pmid": "42843324",
       "title": "Sleep Problems and Mental Health in Middle-Aged and Older Autistic and Non-Autistic Adults.",
       "journal": "International journal of geriatric psychiatry",
@@ -52,19 +65,6 @@
         "mental health"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42843324/"
-    },
-    {
-      "pmid": "42773560",
-      "title": "Rapid Review of the Brief Observation of Social Communication Change (BOSCC) Shows It Can Detect Behavioural Changes in Social Communication in Autism.",
-      "journal": "Autism : the international journal of research and practice",
-      "authors": "Howlin C, Kovalova A, Jaschke A et al.",
-      "published": "2026-10-01",
-      "preview": "Reliable measurement of social communication change remains a major challenge in autism research. The Brief Observation of Social Communication Change (BOSCC) was developed to detect subtle changes in communication.",
-      "tags": [
-        "neurodiversity",
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42773560/"
     },
     {
       "pmid": "42874046",
@@ -79,16 +79,16 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42874046/"
     },
     {
-      "pmid": "42745655",
-      "title": "Longitudinal predictors of internalizing and externalizing behaviors in autism: Examining relationships with ritualistic behavior and social diagnostic features.",
-      "journal": "Development and psychopathology",
-      "authors": "Surmacz M, Coffman MM, Faja S et al.",
+      "pmid": "42905893",
+      "title": "Online gaming for autistic youth: Exploring the impact on participation from the perspectives of autistic adolescents and their caregivers.",
+      "journal": "Australian occupational therapy journal",
+      "authors": "Hayden-Evans M, Inkster T, Fimmano I et al.",
       "published": "2026-10-01",
-      "preview": "Autistic youth commonly experience co-occurring mental health conditions. Core autism features have been linked to internalizing and externalizing symptoms, yet longitudinal pathways remain unclear.",
+      "preview": "The rise in the number of adolescents diagnosed with autism spectrum disorder has highlighted the need for strength-based approaches to support them. The accessibility of online gaming has made it a popular avenue for autistic adolescents to socialise and connect with others while enhancing skill development.",
       "tags": [
-        "mental health"
+        "autism research"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42745655/"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42905893/"
     },
     {
       "pmid": "42841765",
