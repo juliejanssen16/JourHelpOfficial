@@ -1,9 +1,48 @@
 {
-  "updatedAt": "2026-10-26T14:02:01Z",
+  "updatedAt": "2026-11-02T16:55:26Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
+    {
+      "pmid": "42849910",
+      "title": "Therapeutic Horseback Riding for Youth With Autism and Psychiatric Comorbidities: A Randomized Trial.",
+      "journal": "Pediatrics",
+      "authors": "Gabriels RL, Peters C, Pan Z et al.",
+      "published": "2026-11-01",
+      "preview": "Autism spectrum disorder care is often complicated by co-occurring psychiatric symptoms. Equine-assisted services show promise for improving behavioral outcomes in this population.",
+      "tags": [
+        "mental health"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42849910/"
+    },
+    {
+      "pmid": "42955397",
+      "title": "Longitudinal changes in parent-reported sensory processing from childhood to adolescence in autistic individuals: a long-term follow-up study from Türkiye.",
+      "journal": "European journal of pediatrics",
+      "authors": "Kaya Evsen S, Kars Kızılkoca S, Huri M",
+      "published": "2026-10-28",
+      "preview": "Sensory processing differences are common among autistic individuals and may change across development. However, longitudinal evidence describing how these patterns evolve during the transition from childhood to adolescence remains limited.",
+      "tags": [
+        "accommodations",
+        "sensory needs",
+        "support needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42955397/"
+    },
+    {
+      "pmid": "42960815",
+      "title": "Sensory Overstimulation: A Virtual Reality Simulation to Foster Empathy Towards Autistic Youth.",
+      "journal": "Studies in health technology and informatics",
+      "authors": "Andersen AD, Møller ME, Frandsen MS et al.",
+      "published": "2026-10-28",
+      "preview": "This paper investigates whether a Virtual Reality (VR) simulation of sensory overstimulation in a classroom can increase empathy and understanding toward individuals with Autism Spectrum Disorder (ASD) among students aged 13-15 in Danish elementary schools. The project followed an iterative design process in which a...",
+      "tags": [
+        "autistic adults",
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42960815/"
+    },
     {
       "pmid": "42888398",
       "title": "The active self in autism: multisensory and sensorimotor foundations of bodily self-representation.",
@@ -29,6 +68,18 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42852593/"
     },
     {
+      "pmid": "42938389",
+      "title": "From Signal to Memory: A Proposed Adaptive Hierarchy Linking Autism-Associated Genes to Sensory Homeostasis.",
+      "journal": "Genes",
+      "authors": "Gargus JJ",
+      "published": "2026-10-13",
+      "preview": "Every nervous system must preserve sensitivity to change while reducing responses to constancy. This review defines that adaptive objective as sensory homeostasis : the process through which familiar information recedes while unexpected or biologically important events remain salient.",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42938389/"
+    },
+    {
       "pmid": "42850402",
       "title": "Considering Autism in Binge-Type Eating Disorders: Broadening Beyond an Anorexia Nervosa-Focused Model.",
       "journal": "Current psychiatry reports",
@@ -41,66 +92,16 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42850402/"
     },
     {
-      "pmid": "42897981",
-      "title": "Aging in Autism: An Event-Related Potentials Study of Auditory Change Detection.",
-      "journal": "The European journal of neuroscience",
-      "authors": "Bessé M, Morel-Kohlmeyer S, Houy-Durand E et al.",
-      "published": "2026-10-01",
-      "preview": "Autistic individuals are often thought to exhibit reduced tolerance for change, which may stem from atypicalities in sensory processing, particularly in the detection of environmental changes. Within the predictive coding framework, this intolerance may reflect altered generation and updating internal predictions in...",
-      "tags": [
-        "autistic adults",
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42897981/"
-    },
-    {
-      "pmid": "42843324",
-      "title": "Sleep Problems and Mental Health in Middle-Aged and Older Autistic and Non-Autistic Adults.",
-      "journal": "International journal of geriatric psychiatry",
-      "authors": "Roper S, Barbinta A, Quinton AMG et al.",
-      "published": "2026-10-01",
-      "preview": "Sleep is a vital biological function, and impaired sleep can lead to a range of problems, including poor health and wellbeing. Poor sleep and higher rates of sleep-related problems and difficulties are often reported by autistic people of all ages, however, these experiences and problems have seldom been studied in...",
-      "tags": [
-        "autistic adults",
-        "mental health"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42843324/"
-    },
-    {
-      "pmid": "42874046",
-      "title": "Preoperative Sedation via Cecostomy Tube in an Autistic Adolescent: A Case Report.",
-      "journal": "A&A practice",
-      "authors": "Drillings IM, Jones SE",
-      "published": "2026-10-01",
-      "preview": "Preoperative sedation of autistic children is frequently complicated by challenges in communication, sensory processing, and participation in medical care. We report a 40-kg, 13-year-old autistic boy with a preexisting cecostomy tube for chronic constipation, in whom previous oral and intramuscular sedation had fail...",
+      "pmid": "42942440",
+      "title": "Sex-Related Specificities of Sensory Profiles in Autism Spectrum Disorder: Impact on Clinical Functioning.",
+      "journal": "Medicina (Kaunas, Lithuania)",
+      "authors": "Pezone M, Garotti R, Sgueglia E et al.",
+      "published": "2026-10-02",
+      "preview": "Background and Objectives: Sensory anomalies are a distinctive feature of Autism Spectrum Disorder (ASD) individuals and appear to differ in intensity, frequency, and subtype between male and female subjects. According to the diagnostic framework of the DSM-5-TR, these sensory patterns are key clinical indicators.",
       "tags": [
         "sensory needs"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42874046/"
-    },
-    {
-      "pmid": "42905893",
-      "title": "Online gaming for autistic youth: Exploring the impact on participation from the perspectives of autistic adolescents and their caregivers.",
-      "journal": "Australian occupational therapy journal",
-      "authors": "Hayden-Evans M, Inkster T, Fimmano I et al.",
-      "published": "2026-10-01",
-      "preview": "The rise in the number of adolescents diagnosed with autism spectrum disorder has highlighted the need for strength-based approaches to support them. The accessibility of online gaming has made it a popular avenue for autistic adolescents to socialise and connect with others while enhancing skill development.",
-      "tags": [
-        "autism research"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42905893/"
-    },
-    {
-      "pmid": "42841765",
-      "title": "Effects of High-Phenolic Extra Virgin Olive Oil on Sensory Processing in Children With Autism Spectrum Disorder: A Pilot Study.",
-      "journal": "International journal of developmental neuroscience : the official journal of the International Society for Developmental Neuroscience",
-      "authors": "Papastavridou D, Baldimtsi E, Katsiana A et al.",
-      "published": "2026-10-01",
-      "preview": "No approved treatments currently exist for the core symptoms of autism spectrum disorder (ASD), prompting clinicians and families to seek alternative approaches, including dietary and nutritional interventions. The Mediterranean diet (MeDi), characterized by a high intake of antioxidant and anti-inflammatory compone...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42841765/"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42942440/"
     }
   ]
 }
