@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-02T16:55:26Z",
+  "updatedAt": "2026-11-09T17:17:40Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
     {
-      "pmid": "42849910",
-      "title": "Therapeutic Horseback Riding for Youth With Autism and Psychiatric Comorbidities: A Randomized Trial.",
-      "journal": "Pediatrics",
-      "authors": "Gabriels RL, Peters C, Pan Z et al.",
+      "pmid": "43001823",
+      "title": "Optimizing Inpatient Care for Children With Autism Spectrum Disorder: A Multidisciplinary and Sensory-Informed Approach.",
+      "journal": "Pediatric annals",
+      "authors": "Drewry M, Gross E, Jakubowski E et al.",
       "published": "2026-11-01",
-      "preview": "Autism spectrum disorder care is often complicated by co-occurring psychiatric symptoms. Equine-assisted services show promise for improving behavioral outcomes in this population.",
+      "preview": "Pediatric hospitalists continue to optimize inpatient care for children with autism spectrum disorder (ASD), their families, and caregivers. The unfamiliar and overstimulating hospital environment frequently heightens distress, contributing to challenging behaviors and resistance to medical care.",
       "tags": [
-        "mental health"
+        "sensory needs"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42849910/"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43001823/"
     },
     {
       "pmid": "42955397",
@@ -44,6 +44,18 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42960815/"
     },
     {
+      "pmid": "42972283",
+      "title": "Outcomes of sensory integration therapy in children with autism spectrum disorder: a non-randomized pre-post intervention study.",
+      "journal": "BMC pediatrics",
+      "authors": "Rahman RMA, Sayed MM, Samei AMA et al.",
+      "published": "2026-10-22",
+      "preview": "Sensory processing abnormalities have been linked to autism symptoms. Sensory integration therapy (SIT) affects autism symptom severity, sensory profile and related socio-demographic/clinical variables.",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42972283/"
+    },
+    {
       "pmid": "42888398",
       "title": "The active self in autism: multisensory and sensorimotor foundations of bodily self-representation.",
       "journal": "BMC psychiatry",
@@ -54,18 +66,6 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42888398/"
-    },
-    {
-      "pmid": "42852593",
-      "title": "Exploring the Neural Mechanisms of Acupuncture Stimulation in Autism Spectrum Disorder: Protocol for a Randomized, Sham-Controlled, Multimodal Neuroimaging Trial.",
-      "journal": "JMIR research protocols",
-      "authors": "Sim J, Choi KS, Lee DH",
-      "published": "2026-10-15",
-      "preview": "Autism spectrum disorder (ASD) is a neurodevelopmental disorder characterized by restricted and repetitive behaviors and disturbances in social communication and interaction. Currently, there is no fundamental treatment for ASD, with only a few medications available for use on a limited basis to manage concomitant n...",
-      "tags": [
-        "quality of life"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42852593/"
     },
     {
       "pmid": "42938389",
@@ -80,18 +80,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42938389/"
     },
     {
-      "pmid": "42850402",
-      "title": "Considering Autism in Binge-Type Eating Disorders: Broadening Beyond an Anorexia Nervosa-Focused Model.",
-      "journal": "Current psychiatry reports",
-      "authors": "Makin L, Tchanturia K",
-      "published": "2026-10-09",
-      "preview": "Research on Autism in eating disorders (EDs) has historically focused on anorexia nervosa (AN), with comparatively limited attention given to binge-type EDs such as bulimia nervosa (BN) and binge eating disorder (BED). This review summarises emerging evidence on Autism in binge-type EDs and highlights key clinical a...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42850402/"
-    },
-    {
       "pmid": "42942440",
       "title": "Sex-Related Specificities of Sensory Profiles in Autism Spectrum Disorder: Impact on Clinical Functioning.",
       "journal": "Medicina (Kaunas, Lithuania)",
@@ -102,6 +90,19 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42942440/"
+    },
+    {
+      "pmid": "42897981",
+      "title": "Aging in Autism: An Event-Related Potentials Study of Auditory Change Detection.",
+      "journal": "The European journal of neuroscience",
+      "authors": "Bessé M, Morel-Kohlmeyer S, Houy-Durand E et al.",
+      "published": "2026-10-01",
+      "preview": "Autistic individuals are often thought to exhibit reduced tolerance for change, which may stem from atypicalities in sensory processing, particularly in the detection of environmental changes. Within the predictive coding framework, this intolerance may reflect altered generation and updating internal predictions in...",
+      "tags": [
+        "autistic adults",
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897981/"
     }
   ]
 }
