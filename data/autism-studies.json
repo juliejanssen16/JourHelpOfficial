@@ -1,9 +1,59 @@
 {
-  "updatedAt": "2026-11-09T17:17:40Z",
+  "updatedAt": "2026-11-16T16:51:56Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
   "studies": [
+    {
+      "pmid": "43033320",
+      "title": "Nicotinic Cholinergic Signaling in Autism Spectrum Disorder: A Secondary Analysis of Receptor Abnormalities and Pharmacological Responses.",
+      "journal": "Neurochemical research",
+      "authors": "Bjørklund G, Gurgas L, Hangan T",
+      "published": "2026-11-14",
+      "preview": "Nicotinic acetylcholine receptor (nAChR) abnormalities and pharmacological responses have been reported in autism spectrum disorder (ASD), but their relationships across human and experimental studies remain unclear. This descriptive secondary analysis used a focused nonsystematic search to select 21 original report...",
+      "tags": [
+        "identity"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43033320/"
+    },
+    {
+      "pmid": "43026406",
+      "title": "\"A Healthy Zebra Not a Sick Horse\": A Cultural Case Study of an Autistic Individual in the USA.",
+      "journal": "Culture, medicine and psychiatry",
+      "authors": "Kaur S, Cascio MA",
+      "published": "2026-11-13",
+      "preview": "Social communication is a key domain at the intersection of culture, medicine, and psychiatry, particularly when communication is medicalized in diagnoses like \"autism spectrum disorder\" (ASD). Clinicians and scholars debate dominant medical model discourses of autism as well as grassroots neurodiversity perspectives.",
+      "tags": [
+        "autistic adults",
+        "neurodiversity",
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43026406/"
+    },
+    {
+      "pmid": "43008191",
+      "title": "Mobile Apps Addressing Feeding of Children With Autism: Systematic Search and Content and Quality Analysis.",
+      "journal": "JMIR mHealth and uHealth",
+      "authors": "Mukarage F, Cofie Kuzagbe C, Nandi Adams S et al.",
+      "published": "2026-11-10",
+      "preview": "Approximately 1 in 100 children worldwide are diagnosed with autism spectrum disorder (ASD), and 46% to 89% of those diagnosed experience significant feeding difficulties. Mobile health (mHealth) apps are a potential tool for scalable support.",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43008191/"
+    },
+    {
+      "pmid": "43027382",
+      "title": "Is Oxidative Stress a Shared Mechanism Linking Autism Regression, Late Diagnosis, and Sex-Disparate Diagnostic Timing?",
+      "journal": "Cells",
+      "authors": "Ayoub G",
+      "published": "2026-11-06",
+      "preview": "Autism spectrum disorder (ASD) research has largely treated early regression, late decline after a period of stability, gradual increases in symptom severity, late diagnosis, and the sex difference in diagnostic timing as separate topics. These phenomena differ in definition, evidence, and plausible mechanism, and d...",
+      "tags": [
+        "late diagnosis"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43027382/"
+    },
     {
       "pmid": "43001823",
       "title": "Optimizing Inpatient Care for Children With Autism Spectrum Disorder: A Multidisciplinary and Sensory-Informed Approach.",
@@ -15,6 +65,18 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/43001823/"
+    },
+    {
+      "pmid": "42945936",
+      "title": "Network analysis of anxiety and related factors in preschool children with autism spectrum disorder.",
+      "journal": "Research in developmental disabilities",
+      "authors": "Lu M, Zou Q, Duan T et al.",
+      "published": "2026-11-01",
+      "preview": "Anxiety is a common comorbid condition in children with autism spectrum disorder (ASD), with a significantly higher prevalence than in neurotypical children, and is associated with adverse developmental outcomes. Previous research has linked intolerance of uncertainty (IU), sensory over-responsivity (SOR), and restr...",
+      "tags": [
+        "sensory needs"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42945936/"
     },
     {
       "pmid": "42955397",
@@ -42,67 +104,6 @@
         "sensory needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42960815/"
-    },
-    {
-      "pmid": "42972283",
-      "title": "Outcomes of sensory integration therapy in children with autism spectrum disorder: a non-randomized pre-post intervention study.",
-      "journal": "BMC pediatrics",
-      "authors": "Rahman RMA, Sayed MM, Samei AMA et al.",
-      "published": "2026-10-22",
-      "preview": "Sensory processing abnormalities have been linked to autism symptoms. Sensory integration therapy (SIT) affects autism symptom severity, sensory profile and related socio-demographic/clinical variables.",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42972283/"
-    },
-    {
-      "pmid": "42888398",
-      "title": "The active self in autism: multisensory and sensorimotor foundations of bodily self-representation.",
-      "journal": "BMC psychiatry",
-      "authors": "Jahanian Najafabadi A, Rastegari A",
-      "published": "2026-10-15",
-      "preview": "The active self, understood as the embodied sense of self arising from goal-directed action and interaction with the environment, is supported by sensorimotor processes including multisensory integration and proprioception. Atypical self-representation in autism spectrum disorder (ASD) has been proposed to relate to...",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42888398/"
-    },
-    {
-      "pmid": "42938389",
-      "title": "From Signal to Memory: A Proposed Adaptive Hierarchy Linking Autism-Associated Genes to Sensory Homeostasis.",
-      "journal": "Genes",
-      "authors": "Gargus JJ",
-      "published": "2026-10-13",
-      "preview": "Every nervous system must preserve sensitivity to change while reducing responses to constancy. This review defines that adaptive objective as sensory homeostasis : the process through which familiar information recedes while unexpected or biologically important events remain salient.",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42938389/"
-    },
-    {
-      "pmid": "42942440",
-      "title": "Sex-Related Specificities of Sensory Profiles in Autism Spectrum Disorder: Impact on Clinical Functioning.",
-      "journal": "Medicina (Kaunas, Lithuania)",
-      "authors": "Pezone M, Garotti R, Sgueglia E et al.",
-      "published": "2026-10-02",
-      "preview": "Background and Objectives: Sensory anomalies are a distinctive feature of Autism Spectrum Disorder (ASD) individuals and appear to differ in intensity, frequency, and subtype between male and female subjects. According to the diagnostic framework of the DSM-5-TR, these sensory patterns are key clinical indicators.",
-      "tags": [
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42942440/"
-    },
-    {
-      "pmid": "42897981",
-      "title": "Aging in Autism: An Event-Related Potentials Study of Auditory Change Detection.",
-      "journal": "The European journal of neuroscience",
-      "authors": "Bessé M, Morel-Kohlmeyer S, Houy-Durand E et al.",
-      "published": "2026-10-01",
-      "preview": "Autistic individuals are often thought to exhibit reduced tolerance for change, which may stem from atypicalities in sensory processing, particularly in the detection of environmental changes. Within the predictive coding framework, this intolerance may reflect altered generation and updating internal predictions in...",
-      "tags": [
-        "autistic adults",
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42897981/"
     }
   ]
 }
