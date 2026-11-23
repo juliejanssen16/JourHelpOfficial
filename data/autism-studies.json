@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T16:51:56Z",
+  "updatedAt": "2026-11-23T19:05:11Z",
   "source": "PubMed / NCBI",
   "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/",
   "method": "Weekly PubMed search for recent peer-reviewed autism research aligned with JourHelp's support, accommodation, sensory, masking, burnout, communication, diagnosis, and quality-of-life goals.",
@@ -55,6 +55,18 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/43027382/"
     },
     {
+      "pmid": "43038268",
+      "title": "Mental Health Treatment Gaps in Autistic Boys and Girls Across Childhood and Adolescence: Implications for Psychiatric-Mental Health Nursing.",
+      "journal": "Journal of child and adolescent psychiatric nursing : official publication of the Association of Child and Adolescent Psychiatric Nurses, Inc",
+      "authors": "Nguyen AA, Jamal MM, Nguyen DL",
+      "published": "2026-11-01",
+      "preview": "Many autistic children have co-occurring psychiatric conditions, yet some do not receive mental-health services their caregivers say they need. We examined unmet care by age and sex, with a closer examination of adolescent girls.",
+      "tags": [
+        "mental health"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43038268/"
+    },
+    {
       "pmid": "43001823",
       "title": "Optimizing Inpatient Care for Children With Autism Spectrum Disorder: A Multidisciplinary and Sensory-Informed Approach.",
       "journal": "Pediatric annals",
@@ -91,19 +103,6 @@
         "support needs"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42955397/"
-    },
-    {
-      "pmid": "42960815",
-      "title": "Sensory Overstimulation: A Virtual Reality Simulation to Foster Empathy Towards Autistic Youth.",
-      "journal": "Studies in health technology and informatics",
-      "authors": "Andersen AD, Møller ME, Frandsen MS et al.",
-      "published": "2026-10-28",
-      "preview": "This paper investigates whether a Virtual Reality (VR) simulation of sensory overstimulation in a classroom can increase empathy and understanding toward individuals with Autism Spectrum Disorder (ASD) among students aged 13-15 in Danish elementary schools. The project followed an iterative design process in which a...",
-      "tags": [
-        "autistic adults",
-        "sensory needs"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42960815/"
     }
   ]
 }
